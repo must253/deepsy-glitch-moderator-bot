@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
   rank.build()
   .then(data => {
       const attachment = new Discord.MessageAttachment(data, "mustxp.png");
-      message.inlineReply(attachment);
+      message.channel.send(attachment);
 
       
       
