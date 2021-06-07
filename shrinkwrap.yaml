@@ -12,7 +12,7 @@ dependencies:
   discord-buttons: 3.1.1
   discord-voice: 1.0.7
   discord-xp: 1.1.14
-  discord.js: 12.5.1
+  discord.js: 12.5.3
   express: 4.17.1
   fortnitetracker-7days-stats: 3.3.1
   fs: 0.0.2
@@ -70,7 +70,7 @@ packages:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
-      mime-types: 2.1.27
+      mime-types: 2.1.31
     dev: false
     engines:
       node: '>= 6'
@@ -1642,6 +1642,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-/NOTfLrsPBVeH7YtFPgsVWveuL+4SjjYxaQ1xtM1KMFj7HdxlBlxeyNLzhyJVx7r4rZGJAZ/6lkKCitSc/Nmpg==
+  /mime-db/1.48.0:
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-FM3QwxV+TnZYQ2aRqhlKBMHxk10lTbMt3bBkMAp54ddrNeVSfcQYOOKuGuy3Ddrm38I04If834fOUSq1yzslJQ==
   /mime-types/2.1.27:
     dependencies:
       mime-db: 1.44.0
@@ -1650,6 +1656,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
+  /mime-types/2.1.31:
+    dependencies:
+      mime-db: 1.48.0
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha512-XGZnNzm3QvgKxa8dpzyhFTHmpP3l5YNusmne07VUOXxou9CqUqYa/HBy124RqtVh/O2pECas/MOcsDgpilPOPg==
   /mime/1.6.0:
     dev: false
     engines:
@@ -2852,7 +2866,7 @@ specifiers:
   discord-buttons: ^3.1.1
   discord-voice: ^1.0.7
   discord-xp: ^1.1.14
-  discord.js: ^12.2.0
+  discord.js: ^12.5.3
   express: ^4.17.1
   fortnitetracker-7days-stats: ^3.3.1
   fs: ^0.0.2
