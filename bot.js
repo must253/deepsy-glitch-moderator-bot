@@ -1229,6 +1229,7 @@ client.on("guildMemberAdd", member => {
    
    //.then(msg => msg.delete({ timeout: 8000, reason: '.' }));
    
+   require("./ExtendedMessage");
    
  client.on("message", async (msg, message) => {
   let saas = await db.fetch(`saas_${msg.guild.id}`);
