@@ -7,7 +7,6 @@ const client5 = new Discord.Client();
 const discord_xp = require("discord-xp");
 const Levels = require("discord-xp");
 const ayarlar = require("./ayarlar.json");
-require('discord-buttons')(client)
 
 const chalk = require("chalk");
 const moment = require("moment");
@@ -695,31 +694,6 @@ client.on('guildMemberAdd',async member => {
 client.on('message', async (message, msg) => {
   
   
-  if(message.content == '.tic'){
-    
-    const opponent = message.mentions.users.first();
-if (!opponent) return message.channel.send(`Lütfen tictactoe'da kime meydan okumak istediğinizi belirtin.`);
-const { TicTacToe } = require('weky')
-const game = new TicTacToe({
-    message: message,
-    opponent: opponent, //opponent
-    xColor: 'red', //x's color
-    oColor: 'blurple', //zero's color
-    xEmoji: '❌',  //the x emoji
-    oEmoji: '0️⃣' ,//the zero emoji
-})
-game.start()//start da game
-    
-    
-  }
-
-  
-      if(message.content == '.calculator') {
-       
-        
-          const { Calculator } = require('weky')
-          await Calculator(message)
-      }
   
   
   
@@ -1780,56 +1754,3 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 //yetkili leveli
 
 
-//layn bu ne layynn
-const { MessageButton, MessageActionRow } = require('discord-buttons')
-
-client.on('message', async (message) => {
-    if (message.content.startsWith('u!davet')) {
-        let button = new MessageButton()
-        .setStyle('green')
-        .setLabel('Davet Et')
-        .setID('click_to_function') 
-
-        let button2 = new MessageButton()
-        .setStyle('green')
-        .setLabel('Oy Ver') 
-        .setID('click_to_function2') 
-        let button3 = new MessageButton()
-        .setStyle('green')
-        .setLabel('Site') 
-        .setID('click_to_function3')
-        let button4 = new MessageButton()
-        .setStyle('green')
-        .setLabel('Destek Sunucusu') 
-        .setID('click_to_function4')
-        
-         let buttonRow = new MessageActionRow()
-            .addComponent(button);
-          let buttonRow2 = new MessageActionRow()
-            .addComponent(button2);
-           let buttonRow3 = new MessageActionRow()
-            .addComponent(button3);
-            let buttonRow4 = new MessageActionRow()
-            .addComponent(button4);
-
-        message.channel.send("**Hangi linki istiyorsanız o butona basınız.**", { components: [ button, button2, button3, button4 ] }
-            
-        );
-
-    };
-    client.on('clickButton', async (button) => {
-      if (button.id === 'click_to_function') {
-        button.message.edit(new Discord.MessageEmbed().setFooter( "UMEF-EK / Discord'da Yeni Devrim!", client.user.avatarURL()) .setDescription(`[Davet Linkim](https://www.umefek.tk/davet)`).setColor("BLUE").setAuthor("Davet Linki"));
-      }
-        if (button.id === 'click_to_function2') {
-          button.message.edit(new Discord.MessageEmbed().setFooter( "UMEF-EK / Discord'da Yeni Devrim!", client.user.avatarURL()) .setDescription(`[Oy Linkim](https://www.umefek.tk/oyver)`).setColor("BLUE").setAuthor("Oy Linki"));
-      }
-      if (button.id === 'click_to_function3') {
-        button.message.edit(new Discord.MessageEmbed().setFooter( "UMEF-EK / Discord'da Yeni Devrim!", client.user.avatarURL()) .setDescription(`[Site Linkim](https://www.umefek.tk/)`).setColor("BLUE").setAuthor("Site Linki"));
-      }
-      if (button.id === 'click_to_function4') {
-        button.message.edit(new Discord.MessageEmbed().setFooter( "UMEF-EK / Discord'da Yeni Devrim!", client.user.avatarURL()) .setDescription(`[Destek Sunucu Linkim](https://discord.gg/b9dxZVcRBn)`).setColor("BLUE").setAuthor("Destek Sunucu Linki"));
-      }
-    });
-});
-//layn bune laynn
