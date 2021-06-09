@@ -20,7 +20,7 @@ exports.run = async(client, message, args) => {
   if(user.id === message.guild.ownerID) return message.channel.send(' ``Sunucu sahibini banlayamazsın.``')
     if (!message.guild.member(user).bannable) return message.reply(' ``Bu kişinin rolü senden üstte veya `Üyeleri yasakla` yetkisine sahip.``');
 
-   message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?').then(async m => {
+   message.inlineReply('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?').then(async m => {
    	 m.react('✅').then(r =>{ 
 
    const tamam = (reaction,user) => reaction.emoji.name == '✅' && user.id == message.author.id;

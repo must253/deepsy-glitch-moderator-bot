@@ -1210,7 +1210,7 @@ client.on("guildMemberAdd", member => {
   if (saas == 'kapali') return;
   if (saas == 'acik') {
   if (msg.content.toLowerCase() === 'sa' || msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'selamun aleyküm' || msg.content.toLowerCase() == 'sea' || msg.content.toLowerCase() == 'sae' || msg.content.toLowerCase() == 'selamün aleyküm' || msg.content.toLowerCase() == 'saa' || msg.content.toLowerCase() == 'seaa') {
-    msg.react('<:asbitches:825647678997397515>'); msg.inlineReply(`**Aleyküm Selam. Hoş Geldin! ** <@${msg.author.id}> `)
+   msg.inlineReply(`**Aleyküm Selam. Hoş Geldin! ** <@${msg.author.id}> `)
   }
   }
 });
