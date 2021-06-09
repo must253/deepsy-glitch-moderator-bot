@@ -9,8 +9,8 @@ if(!isim) message.channel.send('aratılıcak kelime giriniz');
   
   const aratılan = `${message.guild.members.cache.filter(s => !s.user.bot).filter(member => member.user.username.includes(`${isim}`)).size}`
   
-  if (aratılan == 0){ message.channel.send(`**${isim}** İsminde hiç bir kullanıcı bulamadım`); }
-  
+ if(isim){ if (aratılan == 0){ message.channel.send(`**${isim}** İsminde hiç bir kullanıcı bulamadım`); }
+         }
   else
   message.channel.send(`**${isim}** isminde toplam ${message.guild.members.cache.filter(s => !s.user.bot).filter(member => member.user.username.includes(`${isim}`)).size} kişi var\n ✅ Emojisine tıklıyarak kişileri görebilirsiniz\n ❌ Emojisine tıklıyarak işlemi iptal edebilirsiniz `).then(async m => {
    	 m.react('✅').then(r =>{ 
