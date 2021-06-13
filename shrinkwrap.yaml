@@ -1,4 +1,5 @@
 dependencies:
+  '@codare/codare.ai': 1.0.2
   '@haileybot/captcha-generator': 1.7.0
   '@oskarkarpinski/discord-xp': 1.0.1
   bookman: 2.0.1
@@ -54,6 +55,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Lb3xatdd91MR9tU4sicgrxxKg+/rVD1zKTOh55bmVF2Ri5X8vHTV+jNHTvRzkomGpyepGM+7qA4xMvG8ZqtO8g==
+  /@codare/codare.ai/1.0.2:
+    dependencies:
+      node-fetch: 2.6.1
+    dev: false
+    resolution:
+      integrity: sha512-3d7145SiEA+eV7UCGNJ45NH069qbq8ZaHsDn6RkIv0nnbc1IQtCPdid0CdMrJAWAwiKw2fH4O7RuNZmEx8aSWw==
   /@discordjs/collection/0.1.6:
     dev: false
     resolution:
@@ -2786,6 +2793,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@codare/codare.ai': ^1.0.1
   '@haileybot/captcha-generator': ^1.7.0
   '@oskarkarpinski/discord-xp': ^1.0.0
   bookman: ^2.0.1

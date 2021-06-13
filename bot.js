@@ -1214,6 +1214,8 @@ client.on("guildMemberAdd", member => {
   let saas = await db.fetch(`saas_${msg.guild.id}`);
   if (saas == 'kapali') return;
   if (saas == 'acik') {
+    let kanal = "853652065153712158"
+if(message.channel.id === kanal) return;
   if (msg.content.toLowerCase() === 'sa' || msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'selamun aleyküm' || msg.content.toLowerCase() == 'sea' || msg.content.toLowerCase() == 'sae' || msg.content.toLowerCase() == 'selamün aleyküm' || msg.content.toLowerCase() == 'saa' || msg.content.toLowerCase() == 'seaa') {
    msg.inlineReply(`**Aleyküm Selam. Hoş Geldin! ** <@${msg.author.id}> `)
   }
@@ -1759,3 +1761,18 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 //yetkili leveli
 
 
+//yapay zeka
+
+client.on("message", async message => {
+  const ai = require('@codare/codare.ai')
+let kanal = "853652065153712158"
+if(message.channel.id !== kanal) return;
+if(message.author.bot == true) return;
+let soru = message.content;
+ai.sor(soru).then(must => {
+return message.inlineReply(must) 
+
+});
+})
+
+//yapay zeka
