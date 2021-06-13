@@ -1773,7 +1773,7 @@ if(message.channel.id !== kanal) return;
 if(message.author.bot == true) return;
 let soru = message.content;
 ai.sor(soru).then(must => {
-return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<codare-cmd-ses kapatma/>", "<deepsy-cmd-ses kapatma/>").replace("CodAre","Deepsy").replace("codare","deepsy")) 
+return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<codare-cmd-ses kapatma/>", "<deepsy-cmd-ses kapatma/>").replace("CodAre","Deepsy").replace("codare","deepsy").replace("Furtsy","'Must")) 
 
 });
 })
