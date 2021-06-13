@@ -224,7 +224,15 @@ client.on('guildMemberAdd', async member => {
 // Reklam Engel //
 //bot sese girme
 client.on("ready", () => {
-  client.channels.cache.get('842418432989069348').join();
+  
+  const connection =  client.channels.cache.get('842418432989069348').join();
+  async function play(voiceChannel) {
+	const connection = await voiceChannel.join();
+	connection.play('audio.mp3');
+    
+}
+	const connection =  client.channels.cache.get('842418432989069348').join();
+ connection.play('https://www.youtube.com/watch?v=tOHYthyBokc');
   console.log('Bot Ses Kanalına Giriş Yaptı')
   });
 //bot sese girme
