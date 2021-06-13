@@ -1,4 +1,9 @@
 const Discord = require("discord.js");
+
+//telefondan girmiş gibi gösterme
+Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
+//telefondan girmiş gibi gösterme
+
 const client = new Discord.Client();
 const client2 = new Discord.Client();
 const client3 = new Discord.Client();
