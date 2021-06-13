@@ -1215,7 +1215,7 @@ client.on("guildMemberAdd", member => {
   if (saas == 'kapali') return;
   if (saas == 'acik') {
     let kanal = "853652065153712158"
-if(message.channel.id === kanal) return;
+if(msg.channel.id === kanal) return;
   if (msg.content.toLowerCase() === 'sa' || msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'selamun aleyküm' || msg.content.toLowerCase() == 'sea' || msg.content.toLowerCase() == 'sae' || msg.content.toLowerCase() == 'selamün aleyküm' || msg.content.toLowerCase() == 'saa' || msg.content.toLowerCase() == 'seaa') {
    msg.inlineReply(`**Aleyküm Selam. Hoş Geldin! ** <@${msg.author.id}> `)
   }
