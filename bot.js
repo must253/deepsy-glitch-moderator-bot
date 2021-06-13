@@ -1349,8 +1349,7 @@ db.delete(`time.${message.guild.id}.${message.author.id}`);
 client.on('guildMemberAdd', async (member) => {
   if(db.has(`${member.guild.id}_otorol`)) {
     var rolID = db.fetch(`${member.guild.id}_otorol`)
-    member.addRole(rolID)
-  } else {
+    member.addR(rolID) } else {
     return;
   }
   
