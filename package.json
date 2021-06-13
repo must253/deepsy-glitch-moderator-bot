@@ -17,8 +17,6 @@
     "chalk": "^4.1.0",
     "common-tags": "^1.8.0",
     "date-format": "^3.0.0",
-    "dblapi.js": "^2.4.1",
-    "dctr-antispam.js": "^0.1.1",
     "discord-voice": "^1.0.7",
     "discord-xp": "^1.1.14",
     "discord.js": "^12.5.3",

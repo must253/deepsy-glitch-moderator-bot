@@ -1304,7 +1304,6 @@ client.ayarlar = {
 
 // spam engel başlangıç
 
-const dctrat = require('dctr-antispam.js'); 
 
 var authors = [];
 var warned = [];
