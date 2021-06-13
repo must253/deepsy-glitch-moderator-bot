@@ -1777,4 +1777,4 @@ return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<c
 });
 })
 
-//yapay zeka
+//yapay zekaF
