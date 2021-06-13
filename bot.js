@@ -609,26 +609,7 @@ client.on("roleDelete", async role => {
 });
 
 
-client.on("voiceChannelJoin", (member, channel) => {
-  const { Database } = require('nukleon');
 
-let log = db.fetch(`seslog_${member.guild.id}`)
-if(!log) return
-  const embed = new Discord.MessageEmbed()
-  .setTitle('Bir kullanıcı ses kanalına katıldı!')
-  .setDescription(`<@${member.id}> adlı kullanıcı <#${channel.id}> adlı ses kanalına katıldı!`)
-client.channels.cache.get(log).send(embed)
-});
-client.on("voiceChannelLeave", (member, channel) => {
-  const { Database } = require('nukleon');
-const db = new Database("plasmic.json");
-let log = db.fetch(`seslog_${member.guild.id}`)
-if(!log) return
-  const embed = new Discord.MessageEmbed()
-  .setTitle('Bir kullanıcı ses kanalından ayrıldı!')
-  .setDescription(`<@${member.id}> adlı kullanıcı <#${channel.id}> adlı ses kanalından ayrıldı!`)
-client.channels.cache.get(log).send(embed)
-});
 // SAYAÇ SİSTEMİ
 
 
