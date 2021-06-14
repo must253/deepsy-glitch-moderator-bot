@@ -26,6 +26,9 @@ const ytdl = require("ytdl-core");
 Levels.setURL(process.env.mongodb);
 
 
+const Messages = require("discord-messages");
+Messages.setURL(process.env.mongodurla)
+
 
 
 

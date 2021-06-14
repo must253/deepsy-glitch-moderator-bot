@@ -8,6 +8,7 @@ dependencies:
   chalk: 4.1.0
   common-tags: 1.8.0
   date-format: 3.0.0
+  discord-messages: 1.0.2
   discord-voice: 1.0.7
   discord-xp: 1.1.14
   discord.js: 12.5.3
@@ -519,6 +520,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-D3tM0iRUet3TiIMAdvovxAIRG9gYqFd4j7visGwmPNdQj8Fq/uFFfRxyGCgEwVXAs0NnJPMI/QGVTADxDwhmSQ==
+  /@types/mongodb/3.6.18:
+    dependencies:
+      '@types/bson': 4.0.3
+      '@types/node': 15.12.2
+    dev: false
+    resolution:
+      integrity: sha512-JSVFt9p0rTfZ4EgzXmVHUB3ue00xe3CRbQho8nXfImzEDDM4O7I3po1bwbWl/EIbLENxUreZxqLOc8lvcnLVPA==
   /@types/mongodb/3.6.3:
     dependencies:
       '@types/bson': 4.0.3
@@ -530,6 +538,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-naXYePhweTi+BMv11TgioE2/FXU4fSl29HAH1ffxVciNsH3rYXjNP2yM8wqmSm7jS20gM8TIklKiTen+1iVncw==
+  /@types/node/15.12.2:
+    dev: false
+    resolution:
+      integrity: sha512-zjQ69G564OCIWIOHSXyQEEDpdpGl+G348RAKY0XXy9Z5kU9Vzv1GMNnkar/ZJ8dzXB3COzD9Mo9NtRZ4xfgUww==
   /@types/node/15.6.1:
     dev: false
     resolution:
@@ -962,6 +974,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+  /discord-messages/1.0.2:
+    dependencies:
+      mongoose: /mongoose/5.12.13/mongoose@5.12.13
+    dev: false
+    resolution:
+      integrity: sha512-LhzNf3CvmSWXutu8UxQBI8b5t3YQ6NiMrhkp0KzH424m6zIgX2ZZrgmO9bxUUpZOmRmM3uW1EIu11lVyKbIX2Q==
   /discord-voice/1.0.7:
     dependencies:
       mongoose: /mongoose/5.12.11/mongoose@5.12.11
@@ -1736,6 +1754,15 @@ packages:
       mongoose: '*'
     resolution:
       integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
+  /mongoose-legacy-pluralize/1.0.2/mongoose@5.12.13:
+    dependencies:
+      mongoose: /mongoose/5.12.13/mongoose@5.12.13
+    dev: false
+    id: registry.npmjs.org/mongoose-legacy-pluralize/1.0.2
+    peerDependencies:
+      mongoose: '*'
+    resolution:
+      integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
   /mongoose/5.11.8/mongoose@5.11.8:
     dependencies:
       '@types/mongodb': 3.6.3
@@ -1776,6 +1803,26 @@ packages:
     id: registry.npmjs.org/mongoose/5.12.11
     resolution:
       integrity: sha512-16TVqYhHQdZNR8RTis/8iiTPy+nJPq0UhKyBFTucLLU3PWcDLY2gAGv6aOk0LygTNhEfgNnENgUUHhjVqTuh8w==
+  /mongoose/5.12.13/mongoose@5.12.13:
+    dependencies:
+      '@types/mongodb': 3.6.18
+      bson: 1.1.6
+      kareem: 2.3.2
+      mongodb: 3.6.8
+      mongoose-legacy-pluralize: /mongoose-legacy-pluralize/1.0.2/mongoose@5.12.13
+      mpath: 0.8.3
+      mquery: 3.2.5
+      ms: 2.1.2
+      regexp-clone: 1.0.0
+      safe-buffer: 5.2.1
+      sift: 13.5.2
+      sliced: 1.0.1
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    id: registry.npmjs.org/mongoose/5.12.13
+    resolution:
+      integrity: sha512-QGn1FCzZ8Z+mMGVg8oR2kQw4NmhLloCHsw1NqKWg3Yr7WfPzkE4pe7s9P6o5pkYGsku17n9mqMHowne7EFK/zQ==
   /mpath/0.8.1:
     dev: false
     engines:
@@ -2743,6 +2790,7 @@ specifiers:
   chalk: ^4.1.0
   common-tags: ^1.8.0
   date-format: ^3.0.0
+  discord-messages: ^1.0.2
   discord-voice: ^1.0.7
   discord-xp: ^1.1.14
   discord.js: ^12.5.3
