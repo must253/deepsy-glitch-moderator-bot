@@ -179,6 +179,9 @@ if(newUser.username.includes(options.sunucu_tag) && !sunucu.members.cache.get(ne
 
 if (!newUser.username.includes(options.sunucu_tag) && sunucu.members.cache.get(newUser.id).roles.cache.has(options.tag_rolü_id)) {
  sunucu.members.cache.get(newUser.id).roles.remove(options.tag_rolü_id);
+    let register = '842418432937951264';
+
+  if(sunucu.members.cache.get(newUser.id).roles.cache.has(register)){ 
   sunucu.members.cache.get(newUser.id).roles.remove('842418432937951264')
       sunucu.members.cache.get(newUser.id).roles.remove('842418432937951265')
     sunucu.members.cache.get(newUser.id).roles.remove('842418432937951266')
@@ -186,6 +189,7 @@ if (!newUser.username.includes(options.sunucu_tag) && sunucu.members.cache.get(n
     sunucu.members.cache.get(newUser.id).roles.remove('842418432937951268')
     sunucu.members.cache.get(newUser.id).roles.remove('842418432951058482')
     sunucu.members.cache.get(newUser.id).roles.remove('842418432937951271')
+  }
   
       client.channels.cache.get(options.tag_kanal).send(tagı_kaldırdı);
 
