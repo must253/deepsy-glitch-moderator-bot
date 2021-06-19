@@ -1760,7 +1760,12 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 
 //offline etiket atılınca yazıcak
 
-
+//ses giriş çıkış log
+client.on('userVoiceLeave', (data, member, channel) => {
+let logchannel = member.guild.channels.cache.get("853660386130001941")
+return logchannel.send(`${member.user.username} has left ${channel.name} vc!`);
+});
+//ses giriş çıkış log
 
 //yetkili leveli+
 
