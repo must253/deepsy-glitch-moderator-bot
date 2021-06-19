@@ -1764,8 +1764,6 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 
 //ses 
 
-// Mongoose schema
-
 
 
 //ses 
