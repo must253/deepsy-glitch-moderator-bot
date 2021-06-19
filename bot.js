@@ -1762,9 +1762,21 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 
 
 
-//ses giriş çıkış log
+//ses 
 
-//ses giriş çıkış log
+const DiscordVoice = require("discord-voice");
+// You need to supply your Discord.Client here with your mongodb URL!
+const Voice = new DiscordVoice(client, process.env.);
+
+// We now have a discordVoice property to access Discord-Voice everywhere!
+client.discordVoice = Voice;
+
+client.on('ready', async () => {
+    // We start the voice activity tracking here!
+    await client.discordVoice.start();
+});
+
+//ses 
 
 //yetkili leveli+
 
