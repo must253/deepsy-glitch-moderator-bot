@@ -1767,6 +1767,7 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 // Mongoose schema
 
 
+
 //ses 
 
 //yetkili leveli+
