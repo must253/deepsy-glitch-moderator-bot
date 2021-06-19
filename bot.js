@@ -1760,21 +1760,10 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 
 //offline etiket atılınca yazıcak
 
-const DiscordVoice = require("discord-voice");
-const Voice = new DiscordVoice(client, process.env.mongodurla)
 
- client.discordVoice = Voice
 
 //ses giriş çıkış log
-client.discordVoice.on('userVoiceJoin', (data, member, channel, isNew) => {
-let logchannel = member.guild.channels.cache.get("853660386130001941")
-return logchannel.send(`${member.user.username} joined ${channel.name} vc!`);
-});
 
-client.discordVoice.on('userVoiceLeave', (data, member, channel) => {
-let logchannel = member.guild.channels.cache.get("853660386130001941")
-return logchannel.send(`${member.user.username} has left ${channel.name} vc!`);
-});
 //ses giriş çıkış log
 
 //yetkili leveli+
