@@ -1766,7 +1766,7 @@ let afkkullanıcı = await db.fetch(`afk_${kullanıcı.id}`)
 
 const DiscordVoice = require("discord-voice");
 // You need to supply your Discord.Client here with your mongodb URL!
-const Voice = new DiscordVoice(client, process.env.);
+const Voice = new DiscordVoice(client, process.env.mongodurla);
 
 // We now have a discordVoice property to access Discord-Voice everywhere!
 client.discordVoice = Voice;
