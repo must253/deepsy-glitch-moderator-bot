@@ -45,7 +45,8 @@
     "user-instagram": "^2.1.8",
     "weather-js": "^2.0.0",
     "ytdl-core": "^3.2.2",
-    "@codare/codare.ai": "^1.0.1"
+    "@codare/codare.ai": "^1.0.1",
+    "mongoose": "^5.12.14"
   },
   "engines": {
     "node": "12.x"
