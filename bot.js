@@ -19,7 +19,6 @@ const fs = require("fs");
 require("./util/eventLoader.js")(client);
 const db = require("quick.db");
 const queue = new Map();
-const ytdl = require("ytdl-core");
 Levels.setURL(process.env.mongodb);
 
 

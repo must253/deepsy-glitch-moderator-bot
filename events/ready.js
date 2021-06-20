@@ -24,9 +24,6 @@ module.exports = client => {
 
   ];
 
-  setInterval(function() {
-    var random = Math.floor(Math.random() * (oyun.length - 0 + 1) + 0);
-
-    client.user.setActivity("'Must#1388");
-  });
+  client.user.setActivity("'Must#1388");
+  
 };
