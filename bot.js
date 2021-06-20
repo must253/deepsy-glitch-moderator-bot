@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 
-//telefondan girmiş gibi gösterme
-Discord.Constants.DefaultOptions.ws.properties.$browser = "Discord Android"
-//telefondan girmiş gibi gösterme
+
 
 const client = new Discord.Client();
 const client2 = new Discord.Client();
@@ -920,8 +918,6 @@ if (!modlog) return;
 const entry = await role.guild.fetchAuditLogs({type: 'ROLE_CREATE'}).then(audit => audit.entries.first());
 
 let embed = new Discord.MessageEmbed()
-
-.setAuthor(entry.executor.username, entry.executor.avatarURL())
 
 .addField("**Eylem**", "Rol Oluşturma")
 
