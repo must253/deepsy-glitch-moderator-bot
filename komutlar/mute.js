@@ -10,7 +10,7 @@ if(!message.member.roles.cache.has(yetkili)) return message.channel.send(` Bu Ko
 
 let muterol = db.fetch(`muterol_${message.guild.id}`)
 
-if (!muterol) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarlamak İçin: \`dr!mute-rol @rol\``)
+if (!muterol) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarlamak İçin: \`mute-rol @rol\``)
 let kullanıcı = message.mentions.members.first()
 if(!kullanıcı) return message.channel.send(` Muteleyeceğin Kullanıcıyı Belirt!`)
 
@@ -19,12 +19,23 @@ if (!sebep) return message.channel.send(`Muteleme Sebebini Belirtmelisin!`)
 
   
 kullanıcı.roles.add(muterol)
+  
+   const mute_kaldırma = new discord.MessageEmbed()
+.setDescription(`${kullanıcı}, ${message.author} Tarafından **${sebep}** Nedeniyle Muteledi!`)
+.setTimestamp()
+.setFooter('')
+.setColor('RANDOM')
 
 message.channel.send(`${kullanıcı}, ${message.author} Tarafından **${sebep}** Nedeniyle Muteledi! `)
 
+  
+  var must = "842418436054843438"
+    if(!must) return;
+  client.channels.cache.get(must).send(mute_kaldırma)
 
 }
 exports.conf = {
+  enabled : false,
   name: true,
   guildonly: false,
   aliases: [],
@@ -33,4 +44,3 @@ exports.conf = {
 exports.help = {
   name: 'mute'
 }
-﻿
