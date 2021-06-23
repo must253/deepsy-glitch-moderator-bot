@@ -15,15 +15,15 @@ if(!message.member.roles.cache.has(yetkili)) return message.channel.send(` Bu Ko
 if (!mutelirolu) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarlamak İçin: \`mute-rol @rol\``)
 
   let mutekisi = message.mentions.members.first()
-  if(!mutekisi) return message.reply(`:warning: Lütfen bir kullanıcı etiketleyiniz! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g>\``)
-  if(mutekisi.hasPermission("MANAGE_MESSAGES")) return message.reply(`:warning: Yetkili bir kişiyi muteleyemem! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g>\``)
+  if(!mutekisi) return message.reply(`:warning: Lütfen bir kullanıcı etiketleyiniz! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g> <sebep>\``)
+  if(mutekisi.hasPermission("MANAGE_MESSAGES")) return message.reply(`:warning: Yetkili bir kişiyi muteleyemem! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g> <sebep>\``)
   let mutezaman = args[1]
   .replace(`sn`, `s`)
   .replace(`dk`, `m`)
   .replace(`sa`, `h`)
   .replace(`g`, `d`)
 
-  if(!mutezaman) return message.reply(`:warning: Lütfen bir zaman giriniz! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g>\``)
+  if(!mutezaman) return message.reply(`:warning: Lütfen bir zaman giriniz! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g> <sebep>\``)
   let sebep = args.slice(1).join(' ') || "Belirtilmemiş"
 
   
@@ -64,5 +64,5 @@ exports.conf = {
   exports.help = {
     name: "mute",
     description: "Etiketlediğiniz kişiye belirttiğiniz süre kadar mute atar.",
-    usage: "mute <@kullanıcı> <1sn/1dk/1sa/1g>"
+    usage: "mute <@kullanıcı> <1sn/1dk/1sa/1g> <sebep>"
   };
