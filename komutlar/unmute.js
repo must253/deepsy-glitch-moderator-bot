@@ -25,6 +25,9 @@ kullanıcı.roles.remove(muterol)
 .setTimestamp()
 .setFooter('')
 .setColor('RANDOM')
+  
+  message.channel.send(`${kullanıcı} İsimli Kullanıcının, ${message.author} Tarafından Mutesi Kaldırıldı! `)
+
 
 var must = "842418436054843438"
     if(!must) return;
