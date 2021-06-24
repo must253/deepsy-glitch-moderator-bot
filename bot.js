@@ -1746,6 +1746,7 @@ return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<c
 
 
 
+//sese girme 
 client.on("voiceStateUpdate", async (oldState, newState) => {
   
   if ((oldState.channelID && !newState.channelID) || (oldState.channelID && newState.channelID && oldState.channelID === newState.channelID)) return;
@@ -1753,11 +1754,9 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   
   
    const embed = new Discord.MessageEmbed()
-  .setAuthor(newState.member.tag)
-  .addField(`ID`, newState.member.id, true)
-  .addField(`Discord İsmi`,`${newState.member.username}`,true)
+  .setAuthor(`${newState.member.nickname} (${newState.member.id})`)
   .setColor('RANDOM')
-  .setThumbnail(newState.member.avatarURL)
+  .setThumbnail(newState.avatarURL)
   .setDescription(`<@${newState.member.id}>, <#${newState.channelID}> Kanalına Giriş Yaptı`)
 
 
@@ -1766,3 +1765,29 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   
   
 })
+
+//sese girme 
+
+
+//sesten çıkma
+
+client.on("voiceStateUpdate", async (oldState, newState) => {
+  
+  if ((newState.channelID && !oldState.channelID) || (newState.channelID && oldState.channelID && newState.channelID === oldState.channelID)) return;
+  
+  
+  
+   const embed = new Discord.MessageEmbed()
+  .setAuthor(`${oldState.member.nickname} (${oldState.member.id})`)
+  .setColor('RANDOM')
+  .setThumbnail(oldState.avatarURL)
+  .setDescription(`<@${oldState.member.id}>, <#${oldState.channelID}> Kanalından Çıkış Yaptı`)
+
+
+  
+  client.channels.cache.get('853660386130001941').send(embed)
+  
+  
+})
+
+//sesten çıkma
