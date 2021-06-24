@@ -1742,3 +1742,13 @@ return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<c
 })
 
 //yapay zekaF
+
+
+
+
+client.on("voiceStateUpdate", async (oldState, newState) => {
+  
+  client.channels.cache.get('843090878452727838').send(``)
+  
+  
+})
