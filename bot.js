@@ -1748,7 +1748,21 @@ return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<c
 
 client.on("voiceStateUpdate", async (oldState, newState) => {
   
-  client.channels.cache.get('843090878452727838').send(``)
+  if ((oldState.channelID && !newState.channelID) || (oldState.channelID && newState.channelID && oldState.channelID === newState.channelID)) return;
+  
+  
+  
+   const embed = new Discord.MessageEmbed()
+  .setAuthor(newState.member.tag)
+  .addField(`ID`, newState.member.id, true)
+  .addField(`Discord İsmi`,`${newState.member.username}`,true)
+  .setColor('RANDOM')
+  .setThumbnail(newState.member.avatarURL)
+  .setDescription(`<@${newState.member.id}>, <#${newState.channelID}> Kanalına Giriş Yaptı`)
+
+
+  
+  client.channels.cache.get('853660386130001941').send(embed)
   
   
 })
