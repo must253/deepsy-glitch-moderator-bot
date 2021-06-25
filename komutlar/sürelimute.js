@@ -24,7 +24,7 @@ if (!mutelirolu) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarla
   .replace(`g`, `d`)
 
   if(!mutezaman) return message.reply(`:warning: Lütfen bir zaman giriniz! \nDoğru Kullanım; \`${prefix}mute <@kullanıcı> <1sn/1dk/1sa/1g> <sebep>\``)
-  let sebep = args.slice(1).join(' ') || "Belirtilmemiş"
+  let sebep = args.slice(2).join(' ') || "Belirtilmemiş"
 
   
   const muteleme = new discord.MessageEmbed()
