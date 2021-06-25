@@ -10,10 +10,13 @@ if (!muterol) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarlamak
 let yetkili = db.fetch(`muteyetkilirol_${message.guild.id}`)
 
 if(!message.member.roles.cache.has(yetkili)) return message.channel.send(` Bu Komudu Kullanabilmen İçin <@&${yetkili}> Rolüne Sahip Olmalısın!`)
-
-
-let kullanıcı = message.mentions.members.first()
+  let kullanıcı = message.mentions.members.first()
 if(!kullanıcı) return message.channel.send(` Mutesini Kaldıracağın Kullanıcıyı Belirt!`)
+  
+if(message.member.roles.cache.has(muterol)) { message.channel.send(`Bi akıllı sensin dimi mute hammer rolünü aldım`)
+                                             kullanıcı.roles.remove(yetkili)
+  }
+
 
 
   
