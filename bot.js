@@ -1583,7 +1583,7 @@ const randomAmountOfXp = Math.floor(Math.random() * 20) + 1; // Min 1, Max 30
     const budason = sonuç2 - yeter
     const toplamsonuç = sonuç2 - sonuç ;
     
-     client.channels.cache.get('843090878452727838').send(`${message.author}, Tebrikler! Seviye Atladın Yeni Seviyen **${user.level}**. \n Bir Sonraki Levele **${budason}** XP Kaldı\n Şuanki XP Sayın **${yeter}**`);
+     client.channels.cache.get('843090878452727838').send(`${message.author}, Tebrikler! Seviye Atladın Yeni Seviyen **${user.level}**.\n Şuanki XP Sayın **${yeter}**`);
   }
 });
 
