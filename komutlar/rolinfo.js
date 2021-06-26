@@ -10,14 +10,13 @@ exports.run = async (client,message,args) => {
   var moment = require("moment");
   var temps = moment(message.createdTimestamp).format("LLLL");
   var roleinfoEmbed = new Discord.MessageEmbed()
-  .setColor('RANDOM')
+  .setColor(role.hexColor)
   .addField('✏ Rol İsmi', role.name, true)
   .addField('🆔 ID', role.id, true)
   .addField('👥 Role Sahip Kullanıcılar', role.members.size, true)
   .addField('💙 Renk', role.hexColor, true)
   .addField('📣 Etiketleme?', role.mentionable ? '\nEvet' : 'Hayır', true)
   .addField('📅 Oluşturulduğu Zaman', moment(role.createdAt).format("LL"), true)
-  .addField('Etiketi => <@'++)
   .setFooter("");
   message.channel.send(roleinfoEmbed)
 }
