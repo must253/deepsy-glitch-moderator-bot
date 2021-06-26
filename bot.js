@@ -1957,12 +1957,32 @@ client.on("messageReactionRemove", (messageReaction, user) => {
 }
 
 
+ const { Events } = require('discord.js').Constants;
 
+    Events.CLICK_BUTTON = 'clickButton';
 
- client.ws.on('INTERACTION_CREATE', (data) => {
+ client.on('INTERACTION_CREATE', (data) => {
    
    
    const MessageComponent = require('./v12/Classes/clickButton');
             const button = new MessageComponent(client, data);
+   
+   
     
  })
+
+
+
+module.exports.MessageButton = require(`./v12/Classes/MessageButton`);
+module.exports.MessageActionRow = require('./v12/Classes/MessageActionRow');
+module.exports.ButtonInteraction = require('./v12/Classes/clickButton');
+module.exports.Message = require(`./v12/Classes/Message`);
+module.exports.ButtonCollector = require(`./v12/Classes/ButtonCollector`);
+module.exports.APIMessage = require('./v12/Classes/APIMessage').APIMessage;
+module.exports.sendAPICallback = require('./v12/Classes/APIMessage').sendAPICallback;
+module.exports.DMChannel = require('./v12/Classes/DMChannel');
+module.exports.NewsChannel = require('./v12/Classes/NewsChannel');
+module.exports.TextChannel = require('./v12/Classes/TextChannel');
+module.exports.WebhookClient = require('./v12/Classes/WebhookClient');
+module.exports.Util = require('./v12/Util');
+module.exports.Constants = require('./v12/Constants');
