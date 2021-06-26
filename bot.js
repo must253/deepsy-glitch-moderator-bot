@@ -1955,3 +1955,14 @@ client.on("messageReactionRemove", (messageReaction, user) => {
 
 //reaction rol 3 tane 
 }
+
+
+
+
+ client.ws.on('INTERACTION_CREATE', (data) => {
+   
+   
+   const MessageComponent = require('./v12/Classes/clickButton');
+            const button = new MessageComponent(client, data);
+    
+ })
