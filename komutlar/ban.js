@@ -5,6 +5,10 @@ const db = require('quick.db');
 
 exports.run = async(client, message, args) => {
   
+  let rol = '842418432926679070';
+  const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')
+	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS"))  return message.channel.send(embed)
+  
   
    const disbut = require('discord-buttons'); // Requiring discord-buttons and binding it to the initialised client.
 const { MessageButton } = require("discord-buttons");
@@ -29,7 +33,7 @@ const { MessageButton } = require("discord-buttons");
    client.on('clickButton', async (button) => {
       
      
-     
+     if(message.member.roles.cache.has(rol)&& message.member.hasPermission("BAN_MEMBERS")) {
      if (button.id === 'evet') {
 
 await button.reply.send('Banlandı ', true); //ephemeral message
@@ -47,11 +51,17 @@ await button.reply.send('Banlandı ', true); //ephemeral message
 
       }
         if (button.id === 'hayır') {
-await button.reply.send('Banlanma işlemi iptal edildi ', true);       } })
+await button.reply.send('Banlanma işlemi iptal edildi ', true); 
+        await button.edit('Banlanma işlemi iptal edildi ', true)
+        } 
+     
+     
+     } else { await button.reply.send('Ban yetkili Rolüne sahip değilsin.', true);
+}
+   })
+
   
-	let rol = '842418432926679070';
-  const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')
-	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS"))  return message.channel.send(embed)
+
 	let banlog = '842418436054843441'
 	if(!banlog) return message.channel.send('Ban log sistemi ayarlanmamış.')
     let user = message.mentions.users.first() 
