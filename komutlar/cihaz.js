@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = async (client, message, args) => {// Can°B#1308
+exports.run = async (client, message, args) => {
 
 let member;
 if(message.mentions.members.first()) {

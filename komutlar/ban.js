@@ -6,6 +6,15 @@ const db = require('quick.db');
 exports.run = async(client, message, args) => {
   
   
+   const disbut = require('discord-buttons'); // Requiring discord-buttons and binding it to the initialised client.
+const { MessageButton } = require("discord-buttons");
+  
+  let btn = new MessageButton()
+    .setEmoji('785062885952192512')
+    .setStyle('grey')
+    .setID('evet');
+  
+  
   
 	let rol = '842418432926679070';
   const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')

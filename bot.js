@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 
 
 const client = new Discord.Client();
+require('discord-buttons')(client);
 const client2 = new Discord.Client();
 const client3 = new Discord.Client();
 const client4 = new Discord.Client();

@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const db = require('quick.db') 
 
 
-exports.run = async (message) => {
+exports.run = async (client, message, args) => {
   
-  const disbut = require('discord-buttons')(client); // Requiring discord-buttons and binding it to the initialised client.
+  const disbut = require('discord-buttons'); // Requiring discord-buttons and binding it to the initialised client.
 const { MessageButton } = require("discord-buttons");
   
   let btn = new MessageButton()
