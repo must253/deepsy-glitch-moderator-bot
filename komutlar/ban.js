@@ -5,6 +5,19 @@ const db = require('quick.db');
 
 exports.run = async(client, message, args) => {
   
+  	let banlog = '842418436054843441'
+	if(!banlog) return message.channel.send('Ban log sistemi ayarlanmamış.')
+    let user = message.mentions.users.first() 
+    let sebep = args.slice(1).join(' ') || "Belirtilmemiş."
+     if(!user) return message.channel.send(' ``Bir kişi etiketlemelisin.``')
+     if(user.id === message.author.id) return message.channel.send(' ``Kendini banlayamazsın.``')
+     if(user.id === client.user.id) return message.channel.send(' ``Botu banlayamazsın.``')
+  if(user.id === message.guild.ownerID) return message.channel.send(' ``Sunucu sahibini banlayamazsın.``')
+    if (!message.guild.member(user).bannable) return message.reply(' ``Bu kişinin rolü senden üstte veya `Üyeleri yasakla` yetkisine sahip.``');
+  
+  
+  
+  
   let rol = '842418432926679070';
   const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')
 	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS"))  return message.channel.send(embed)
@@ -51,8 +64,9 @@ await button.reply.send('Banlandı ', true); //ephemeral message
 
       }
         if (button.id === 'hayır') {
-await button.reply.send('Banlanma işlemi iptal edildi ', true); 
-        await button.edit('Banlanma işlemi iptal edildi ', true)
+          
+          	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS")) { await button.reply.send('Ban yetkili Rolüne sahip değilsin.', true);} else {
+await button.reply.send('Banlanma işlemi iptal edildi ', true); }
         } 
      
      
@@ -62,15 +76,7 @@ await button.reply.send('Banlanma işlemi iptal edildi ', true);
 
   
 
-	let banlog = '842418436054843441'
-	if(!banlog) return message.channel.send('Ban log sistemi ayarlanmamış.')
-    let user = message.mentions.users.first() 
-    let sebep = args.slice(1).join(' ') || "Belirtilmemiş."
-     if(!user) return message.channel.send(' ``Bir kişi etiketlemelisin.``')
-     if(user.id === message.author.id) return message.channel.send(' ``Kendini banlayamazsın.``')
-     if(user.id === client.user.id) return message.channel.send(' ``Botu banlayamazsın.``')
-  if(user.id === message.guild.ownerID) return message.channel.send(' ``Sunucu sahibini banlayamazsın.``')
-    if (!message.guild.member(user).bannable) return message.reply(' ``Bu kişinin rolü senden üstte veya `Üyeleri yasakla` yetkisine sahip.``');
+
 
    message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?' , { component: row }).then(async m => {
    	
