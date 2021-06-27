@@ -9,12 +9,20 @@ exports.run = async(client, message, args) => {
    const disbut = require('discord-buttons'); // Requiring discord-buttons and binding it to the initialised client.
 const { MessageButton } = require("discord-buttons");
   
-  let btn = new MessageButton()
-    .setEmoji('785062885952192512')
+  let evet = new MessageButton()
+      .setLabel("Banla")
+    .setEmoji('843074468750295040')
     .setStyle('grey')
     .setID('evet');
+  let hayır = new MessageButton()
+      .setLabel("Banlama")
+    .setEmoji('843074510013464576')
+    .setStyle('grey')
+    .setID('hayır');
   
-  
+  let row = new disbut.MessageActionRow()
+    .addComponent(evet)
+      .addComponent(hayır)
   
 	let rol = '842418432926679070';
   const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')
@@ -29,7 +37,7 @@ const { MessageButton } = require("discord-buttons");
   if(user.id === message.guild.ownerID) return message.channel.send(' ``Sunucu sahibini banlayamazsın.``')
     if (!message.guild.member(user).bannable) return message.reply(' ``Bu kişinin rolü senden üstte veya `Üyeleri yasakla` yetkisine sahip.``');
 
-   message.inlineReply('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?').then(async m => {
+   message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?' , { component: row }).then(async m => {
    	 m.react('✅').then(r =>{ 
 
    const tamam = (reaction,user) => reaction.emoji.name == '✅' && user.id == message.author.id;
