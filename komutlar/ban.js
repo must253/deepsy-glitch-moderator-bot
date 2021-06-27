@@ -24,6 +24,24 @@ const { MessageButton } = require("discord-buttons");
     .addComponent(evet)
       .addComponent(hayır)
   
+ 
+
+   client.on('clickButton', async (button) => {
+      if (button.id === 'evet') {
+       await button.reply.send('My message'); //normal message, you can use also embed, buttons etc
+
+await button.reply.send('My messsage', true); //ephemeral message
+
+await button.reply.send('My message', { embed: embed, ephemeral: true }); //send embed with ephemeral message
+
+await button.reply.edit('My new reply'); //you can use the options which are above
+await button.reply.fetch(); 
+
+      }
+        if (button.id === 'hayır') {
+        button.channel.send(new Discord.MessageEmbed().setFooter( "UMEF-EK / Discord'da Yeni Devrim!", client.user.avatarURL()) .setDescription(`[Oy Linkim](https://www.umefek.tk/oyver)`).setColor("BLUE").setAuthor("Oy Linki"));
+      } })
+  
 	let rol = '842418432926679070';
   const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')
 	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS"))  return message.channel.send(embed)
