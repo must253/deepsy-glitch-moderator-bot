@@ -47,6 +47,9 @@ const { MessageButton } = require("discord-buttons");
       
      
      if(message.member.roles.cache.has(rol)&& message.member.hasPermission("BAN_MEMBERS")) {
+       
+          message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?' , { component: row })
+
      if (button.id === 'evet') {
 
 await button.reply.send('Banlandı ', true); //ephemeral message
@@ -65,23 +68,25 @@ await button.reply.send('Banlandı ', true); //ephemeral message
       }
         if (button.id === 'hayır') {
           
-          	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS")) { await button.reply.send('Ban yetkili Rolüne sahip değilsin.', true);} else {
-await button.reply.send('Banlanma işlemi iptal edildi ', true); }
+await button.reply.send('Banlanma işlemi iptal edildi ', true); 
+          const embed2 = new Discord.MessageEmbed().setDescription('Banlanma işlemi iptal edildi ')
+message.delete()
+          message.channel.send(embed2)
         } 
      
      
-     } else { await button.reply.send('Ban yetkili Rolüne sahip değilsin.', true);
-}
-   })
+     } else  await button.reply.send('Ban yetkili Rolüne sahip değilsin.', true);
+
+
 
   
 
 
 
-   message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?' , { component: row }).then(async m => {
    	
- })
-} 
+ })})
+        }
+}            
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
