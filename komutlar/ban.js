@@ -65,14 +65,15 @@ await button.reply.send('Banlandı ', true); //ephemeral message
 
       }
         if (button.id === 'hayır') {
-          
-await button.reply.send('Banlanma işlemi iptal edildi '); 
+          const embed2 = new Discord.MessageEmbed().setDescription('Banlanma işlemi iptal edildi ')
+             	m.delete()
+await button.reply.send(embed); 
          
 
         } }
      
      if(button.clicker.user.id === !message.author.id){
-               const embed2 = new Discord.MessageEmbed().setDescription('Banlanma işlemi iptal edildi ')
+               
 
        await button.reply.send('Yazan kişi sen değilsin', true);
        
