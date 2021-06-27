@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 
 
 const client = new Discord.Client();
-require('discord-buttons')(client);
 const client2 = new Discord.Client();
 const client3 = new Discord.Client();
 const client4 = new Discord.Client();
@@ -1737,7 +1736,7 @@ if(message.channel.id !== kanal) return;
 if(message.author.bot == true) return;
 let soru = message.content;
 ai.sor(soru).then(must => {
-return message.inlineReply(must.replace("codere.fun'da","Deepsy'de").replace("<codare-cmd-ses kapatma/>", "<deepsy-cmd-ses kapatma/>").replace("CodAre","Deepsy").replace("codare","deepsy").replace("Furtsy","'Must").replace("Hüseyin'le", "'Must Beyefendi ile")) 
+return message.reply(must.replace("codere.fun'da","Deepsy'de").replace("<codare-cmd-ses kapatma/>", "<deepsy-cmd-ses kapatma/>").replace("CodAre","Deepsy").replace("codare","deepsy").replace("Furtsy","'Must").replace("Hüseyin'le", "'Must Beyefendi ile")) 
 
 });
 })
@@ -1957,3 +1956,4 @@ client.on("messageReactionRemove", (messageReaction, user) => {
 //reaction rol 3 tane 
 }
 
+require('discord-buttons')
