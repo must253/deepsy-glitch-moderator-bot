@@ -42,10 +42,11 @@ const { MessageButton } = require("discord-buttons");
       .addComponent(hayır)
   
  
+   message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?' , { component: row }).then(async m => {
 
    client.on('clickButton', async (button) => {
       
-     if(button.user === message.author){
+     if(button.clicker.user.id === message.author.id){
      
      if (button.id === 'evet') {
 
@@ -70,7 +71,7 @@ await button.reply.send('Banlanma işlemi iptal edildi ');
 
         } }
      
-     if(button.user === !message.author){
+     if(button.clicker.user.id === !message.author.id){
                const embed2 = new Discord.MessageEmbed().setDescription('Banlanma işlemi iptal edildi ')
 
        await button.reply.send('Yazan kişi sen değilsin', true);
@@ -83,8 +84,7 @@ await button.reply.send('Banlanma işlemi iptal edildi ');
 })
 
 
-   message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?' , { component: row }).then(async m => {
-   	
+
  })
         
 }             
