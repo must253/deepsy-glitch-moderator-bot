@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 
+
 const client = new Discord.Client();
 const client2 = new Discord.Client();
 const client3 = new Discord.Client();
@@ -9,9 +10,6 @@ const client5 = new Discord.Client();
 const discord_xp = require("discord-xp");
 const Levels = require("discord-xp");
 const ayarlar = require("./ayarlar.json");
-
-require("discord-buttons")(client);
-
 
 const chalk = require("chalk");
 const moment = require("moment");
@@ -1958,34 +1956,3 @@ client.on("messageReactionRemove", (messageReaction, user) => {
 //reaction rol 3 tane 
 }
 
-
-
-client.on('message', async (message, msg) => {
-  
-  
-  
-  
-  
-    if(message.content == '.button') {
-      
-      
-      const { MessageButton, MessageActionRow }  = require('discord-buttons')(client);
-  
-  let btn = new MessageButton()
-    .setEmoji('785062885952192512')
-    .setStyle('grey')
-    .setID('testid');
-    
-let btn2 = new MessageButton()
-    .setLabel('Discord buttos!')
-    .setStyle('url')
-    .setURL('https://npmjs.com/package/discord-buttons');
-    
-let row = new MessageActionRow()
-    .addComponent(btn)
-    .addComponent(btn);
-
-message.channel.send(`Wumpus!!!`, { component: row });
-      
-      
-    }})
