@@ -8,7 +8,7 @@ exports.run = async(client, message, args) => {
 
   let yetkili = "842418432926679068"
 
-if(!message.member.roles.cache.has(yetkili)) return message.channel.send(` Bu Komudu Kullanabilmen İçin <@&${yetkili}> Rolüne Sahip Olmalısın!`)
+if(!message.member.roles.cache.has(yetkili)) return message.channel.send(` Bu Komudu Kullanabilmen İçin Mute Yetkilisi Olmalısın!`)
 
   let mutelirolu = db.fetch(`muterol_${message.guild.id}`)
 
