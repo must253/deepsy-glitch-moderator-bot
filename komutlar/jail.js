@@ -27,7 +27,7 @@ message.guild.members.cache.get(kullanıcı.id).roles.cache.forEach(r => {
 })
 
 message.guild.member(kullanıcı).roles.add(jailrol)
-message.channel.send('👍 **Jail atma** işlemi başarılı !')
+message.Must('👍 **Jail atma** işlemi başarılı !')
 }
 
 exports.conf = {

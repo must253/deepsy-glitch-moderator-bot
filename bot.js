@@ -1225,7 +1225,7 @@ client.on("guildMemberAdd", member => {
     let kanal = "853652065153712158"
 if(msg.channel.id === kanal) return;
   if (msg.content.toLowerCase() === 'sa' || msg.content.toLowerCase() == 'selam' || msg.content.toLowerCase() == 'selamun aleyküm' || msg.content.toLowerCase() == 'sea' || msg.content.toLowerCase() == 'sae' || msg.content.toLowerCase() == 'selamün aleyküm' || msg.content.toLowerCase() == 'saa' || msg.content.toLowerCase() == 'seaa') {
-   msg.inlineReply(`**Aleyküm Selam. Hoş Geldin! ** <@${msg.author.id}> `)
+   msg.Must(`**Aleyküm Selam. Hoş Geldin! ** `)
   }
   }
 });
@@ -1553,7 +1553,7 @@ client.on("message", async message => {
   if(iltifatSayi >= 60) { // 20 yazan yer, 20 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
     iltifatSayi = 0;
     const must = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
-    message.inlineReply(`${(iltifatlar)[must]}`);
+    message.Must(`${(iltifatlar)[must]}`);
   };
 });
 
