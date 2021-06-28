@@ -21,7 +21,7 @@ exports.run = async(client, message, args) => {
   
   
   
-     message.channel.send('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?').then(async m => {
+     message.Must('<@'+ user.id + '> Kişisini **'+ sebep+ '** Sebebiyle banlamak istediğine eminmisin ?').then(async m => {
    	 m.react('✅').then(r =>{ 
 
    const tamam = (reaction,user) => reaction.emoji.name == '✅' && user.id == message.author.id;
