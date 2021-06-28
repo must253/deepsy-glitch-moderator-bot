@@ -12,7 +12,7 @@ const snipesaat = db.get(`snipesaat.${message.guild.id}.${message.channel.id}`)
      
     if(!snipemesaj) {
 
-                message.channel.send(new discord.MessageEmbed()
+                message.Must(new discord.MessageEmbed()
 
                       .setColor("RANDOM")
 
@@ -27,7 +27,7 @@ const snipesaat = db.get(`snipesaat.${message.guild.id}.${message.channel.id}`)
              const { MessageEmbed } = require('discord.js')
 
   
-   message.inlineReply(new MessageEmbed()
+   message.Must(new MessageEmbed()
 
                       .setColor("RANDOM")
 

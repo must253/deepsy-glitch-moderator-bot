@@ -1,6 +1,6 @@
 exports.run = function(client, message, args) {
   
-message.inlineReply('ᛉ')
+message.Must('ᛉ')
 
 }
 
