@@ -165,30 +165,7 @@ if(newUser.username.includes(options.sunucu_tag) && !sunucu.members.cache.get(ne
 }
   
   
-  client.on("userUpdate", async (oldUser, newUser) => {
-  
-const tag_kanal = options.tag_kanal
-const sunucu_tag = options.sunucu_tag
-const taglı_rol = options.tag_rolü_id
-const sunucu_id = options.sunucu_id
-
-
-const taglılar =  client.guilds.cache.get(sunucu_id).members.cache.filter(s => !s.user.bot).filter(member => member.user.username.includes(sunucu_tag)).size;
-
-
-
-const tagı_aldı = new Discord.MessageEmbed()
-.setDescription(`**Eski İsmi => ${oldUser.username}, Yeni İsmi => ${newUser.username} Tagımızı ( \`${sunucu_tag}\`) alarak aramıza katıldı! <@&${sunucu_tag}> Rolüne sahip oldu! Sunucuda Toplam ${taglılar} Taglı Bulunuyor **`)
-.setTimestamp()
-.setFooter('')
-.setColor('RANDOM')
-
-if(oldUser.username !== newUser.username) {
-if(newUser.username.includes() && !client.guilds.cache.get(sunucu_id).members.cache.get(newUser.id).roles.cache.has(taglı_rol)) {
- client.guilds.cache.get(sunucu_id).members.cache.get(newUser.id).roles.add(taglı_rol);
-   client.channels.cache.get(tag_kanal).send(tagı_aldı);
-
-}}})
+ 
   
 
 //Tag kaldırıldığında rol alınır...
@@ -217,6 +194,8 @@ if (!newUser.username.includes(options.sunucu_tag) && sunucu.members.cache.get(n
       client.channels.cache.get(options.tag_kanal).send(tagı_kaldırdı);
 
 }}})
+
+ 
 
 //tag alana rol verme
 
