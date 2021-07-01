@@ -403,8 +403,6 @@ client.on("message", async msg => {
 
 //tag alana rol verme
 
-
-
 //tag alana rol verme
 
 
