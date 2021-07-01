@@ -163,6 +163,9 @@ if(newUser.username.includes(options.sunucu_tag) && !sunucu.members.cache.get(ne
    client.channels.cache.get(options.tag_kanal).send(tagı_aldı);
 
 }
+  
+  
+  
 
 //Tag kaldırıldığında rol alınır...
   
