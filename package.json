@@ -39,8 +39,7 @@
     "request": "^2.88.2",
     "superagent": "^5.3.1",
     "weather-js": "^2.0.0",
-    "@codare/codare.ai": "^1.0.1",
-    "discord-buttons": "^3.2.1"
+    "@codare/codare.ai": "^1.0.1"
   },
   "engines": {
     "node": "12.x"

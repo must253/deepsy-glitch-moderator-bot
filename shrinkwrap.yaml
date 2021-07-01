@@ -7,7 +7,6 @@ dependencies:
   chalk: 4.1.0
   common-tags: 1.8.0
   date-format: 3.0.0
-  discord-buttons: 3.2.1
   discord-voice: 1.0.7
   discord-xp: 1.1.14
   discord.js: 12.5.3
@@ -948,10 +947,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-  /discord-buttons/3.2.1:
-    dev: false
-    resolution:
-      integrity: sha512-UN5xOLG0TwTX6Qr/hjdSyP63HxOYxs5saxfdJ/vijSqjfa/yVPgxO2InKF0l8rpsDOVMsLWGDFLI3+Ax97/LOg==
   /discord-voice/1.0.7:
     dependencies:
       mongoose: /mongoose/5.12.11/mongoose@5.12.11
@@ -2638,7 +2633,6 @@ specifiers:
   chalk: ^4.1.0
   common-tags: ^1.8.0
   date-format: ^3.0.0
-  discord-buttons: ^3.2.1
   discord-voice: ^1.0.7
   discord-xp: ^1.1.14
   discord.js: ^12.5.3
