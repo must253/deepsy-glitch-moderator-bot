@@ -1967,9 +1967,15 @@ client.on('ready', () => {
         let name = interaction.data.custom_id
 
         let GameMap = new Map([
-            ["buttongartic","860203076338188320"],
-            ["buttonvk","860203076338188320"],
-            ["buttondc","860203076338188320"]
+            ["buttonbjk","842418432916848650"],
+            ["buttonfb","842418432905183251"],
+            ["buttongs","842418432916848649"],
+            ["buttonts","844164935721680966"],
+            ["buttonvalorant","844175299171319828"],
+            ["buttonlol","844175309816725506"],
+            ["buttoncs","844175311519088640"],
+            ["buttonpubg","844175454420205578"],
+            ["buttonmc","844175728894935041"]
         ])
 
         let member = await client.guilds.cache.get("842418432905183242").members.fetch(interaction.member.user.id)
@@ -1978,11 +1984,11 @@ client.on('ready', () => {
         let role = GameMap.get(name)
         let returnText;
 
-        if(member.roles.cache.has('842418432937951265')){
-            await member.roles.remove('842418432937951265')
+        if(member.roles.cache.has(role)){
+            await member.roles.remove(role)
             returnText = `Rol üzerinizden alındı`
         }else{
-            await member.roles.add('842418432937951265')
+            await member.roles.add(role)
             returnText = `Rol üzerinize verildi`
 
         }
