@@ -15,15 +15,19 @@ const sunucu = client.guilds.cache.get(sunucu_id)
 //Tag alındığında rol verilir...
 
 
-const tagı_aldı = new Discord.MessageEmbed()
-.setDescription(`**Eski İsmi => ${oldUser.username}, Yeni İsmi => ${newUser.username} Tagımızı ( \`${sunucu_tag}\`) alarak aramıza katıldı! <@&${taglı_rol}> Rolüne sahip oldu! Sunucuda Toplam ${taglılar} Taglı Bulunuyor **`)
+const tagı_kaldırdı = new Discord.MessageEmbed()
+.setDescription(`** <@${newUser.id  }> Tagımızı ( \`${sunucu_tag}\`)  bırakarak aramızdan ayrıldı! <@&taglı_rol> Rolü geri alındı!**`)
 .setTimestamp()
 .setFooter('')
 .setColor('RANDOM')
 
-if(oldUser.username !== newUser.username) {
-if(newUser.username.includes(sunucu_tag) && !sunucu.members.cache.get(newUser.id).roles.cache.has(taglı_rol)) {
- sunucu.members.cache.get(newUser.id).roles.add(taglı_rol);
-   client.channels.cache.get(tag_kanal).send(tagı_aldı);
+if (!newUser.username.includes(sunucu_tag) && sunucu.members.cache.get(newUser.id).roles.cache.has(taglı_rol)) {
+ sunucu.members.cache.get(newUser.id).roles.remove(taglı_rol);
+  
+      client.channels.cache.get(tag_kanal).send(tagı_kaldırdı);
 
-}}})
+}})
+
+
+
+
