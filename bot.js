@@ -1960,4 +1960,42 @@ client.on("messageReactionRemove", (messageReaction, user) => {
 //reaction rol 3 tane 
 }
 
-require('discord-buttons')
+
+client.on('ready', () => {
+    client.ws.on('INTERACTION_CREATE', async interaction => {
+        
+        let name = interaction.data.custom_id
+
+        let GameMap = new Map([
+            ["buttongartic","860203076338188320"],
+            ["buttonvk","860203076338188320"],
+            ["buttondc","860203076338188320"]
+        ])
+
+        let member = await client.guilds.cache.get("842418432905183242").members.fetch(interaction.member.user.id)
+        if(!GameMap.has(name) || !member) return;
+
+        let role = GameMap.get(name)
+        let returnText;
+
+        if(member.roles.cache.has('842418432937951265')){
+            await member.roles.remove('842418432937951265')
+            returnText = `Rol üzerinizden alındı`
+        }else{
+            await member.roles.add('842418432937951265')
+            returnText = `Rol üzerinize verildi`
+
+        }
+        
+        client.api.interactions(interaction.id, interaction.token).callback.post({
+            data: {
+                type: 4,
+                data: {
+                    content: returnText,
+                    flags: "64" // Gizli reply atmak için girmeniz gereken flag
+                }
+            }
+        })
+        
+    });
+});
