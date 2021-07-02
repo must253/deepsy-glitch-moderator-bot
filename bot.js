@@ -1869,4 +1869,7 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
   }
 }})
   
+  new Discord.WebhookClient(client.user.id, interaction.token).send('hello world')
+
+  
 })
