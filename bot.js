@@ -1855,3 +1855,18 @@ client.on('ready', () => {
 
 
 
+client.ws.on('INTERACTION_CREATE', async interaction => {
+  
+  client.api.applications(client.user.id).guilds('842418432905183242').commands.post({data: {
+    name: 'ping',
+    description: 'ping pong!'
+}})
+  
+  client.api.interactions(interaction.id, interaction.token).callback.post({data: {
+  type: 4,
+  data: {
+    content: 'hello world!'
+  }
+}})
+  
+})
