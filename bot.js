@@ -1857,15 +1857,22 @@ client.on('ready', () => {
 client.on('ready', async () => {
   setInterval( async () => {
 
-  
-    let {body} = await superagent
-  .get('https://some-random-api.ml/img/panda')
+  const superagent = require("superagent")
 
-  let embed = new Discord.MessageEmbed
-  .setTitle("Panda")
-  .setImage(body.link)
-  
-  }, 600);
+    let {body} = await superagent
+  .get('https://source.unsplash.com/random')
+    
+    const embed = new Discord.MessageEmbed()
+.setAuthor(`yeni random fotoğraf:`)
+.setImage('https://source.unsplash.com/random') 
+.setTimestamp()
+.setFooter(`must`)
+    
+    
+    client.channels.cache.get('860903198126768138').send(embed)
+
+ 
+  }, 60000000);
   
 
 });

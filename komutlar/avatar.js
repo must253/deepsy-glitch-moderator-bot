@@ -10,14 +10,14 @@ const embed = new Discord.MessageEmbed()
 .setAuthor(`${user.tag} adlı kullanıcının avatarı:`)
 .setImage(user.displayAvatarURL({dynamic:true})) 
 .setTimestamp()
-.setFooter(`WoLvEs`)
+.setFooter(``)
 message.channel.send(embed)
  } else {
   const embed = new Discord.MessageEmbed()
 .setAuthor(`${message.author.tag}  adlı kullanıcının avatarı:` , message.author.avatarURL )
 .setImage(message.author.avatarURL({dynamic:true}))
 .setTimestamp()
-.setFooter(`WoLvEs`)
+.setFooter(``)
 message.channel.send(embed)
  }
 };
