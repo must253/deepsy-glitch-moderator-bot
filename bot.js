@@ -1830,13 +1830,15 @@ client.on('ready', () => {
 
         let role = GameMap.get(name)
         let returnText;
+      const rolisim = client.guilds.cache.get(options.sunucu_id).roles.cache.get(role);
+      
 
         if(member.roles.cache.has(role)){
             await member.roles.remove(role)
-            returnText = `${role} Rol üzerinizden alındı`
+            returnText = `${rolisim.name} İsimli rol ver,`
         }else{
             await member.roles.add(role)
-            returnText = `Rol üzerinize verildi`
+            returnText = `${rolisim.name}  Rol üzerinize verildi`
 
         }
         
