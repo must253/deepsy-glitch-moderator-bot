@@ -1822,7 +1822,8 @@ client.on('ready', () => {
             ["buttonmc","844175728894935041"],
             ["buttonsewvar","844167402014507008"],
             ["buttonsewyok","844171087163424788"],
-            ["buttonsewyapmıyorum","844171187957530624"]
+            ["buttonsewyapmıyorum","844171187957530624"],
+            ["buttonnsfw","860921857011089458"]
         ])
 
         let member = await client.guilds.cache.get("842418432905183242").members.fetch(interaction.member.user.id)
