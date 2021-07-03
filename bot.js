@@ -1835,10 +1835,10 @@ client.on('ready', () => {
 
         if(member.roles.cache.has(role)){
             await member.roles.remove(role)
-            returnText = `${rolisim.name} İsimli rol ver,`
+            returnText = `"${rolisim.name}" İsimli rol verildi`
         }else{
             await member.roles.add(role)
-            returnText = `${rolisim.name}  Rol üzerinize verildi`
+            returnText = `"${rolisim.name}" İsimli rol verildi`
 
         }
         
@@ -1851,6 +1851,8 @@ client.on('ready', () => {
                 }
             }
         })
+      
+      
         
     });
 });
