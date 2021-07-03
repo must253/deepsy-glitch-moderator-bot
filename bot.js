@@ -1833,7 +1833,7 @@ client.on('ready', () => {
 
         if(member.roles.cache.has(role)){
             await member.roles.remove(role)
-            returnText = `Rol üzerinizden alındı`
+            returnText = `${role} Rol üzerinizden alındı`
         }else{
             await member.roles.add(role)
             returnText = `Rol üzerinize verildi`
@@ -1851,24 +1851,4 @@ client.on('ready', () => {
         })
         
     });
-});
-
-
-client.on('ready', async () => {
-  setInterval( async () => {
-
-  const superagent = require("superagent")
-
-    let {body} = await superagent
-  .get('https://some-random-api.ml/img/dog')
-    
- 
-    
-    
- //   client.channels.cache.get('860903198126768138').send(body.link)
-
- 
-  }, 60000);
-  
-
 });
