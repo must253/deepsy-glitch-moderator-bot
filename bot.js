@@ -1852,3 +1852,20 @@ client.on('ready', () => {
         
     });
 });
+
+
+client.on('ready', async () => {
+  setInterval( async () => {
+
+  
+    let {body} = await superagent
+  .get('https://some-random-api.ml/img/panda')
+
+  let embed = new Discord.MessageEmbed
+  .setTitle("Panda")
+  .setImage(body.link)
+  
+  }, 600);
+  
+
+});
