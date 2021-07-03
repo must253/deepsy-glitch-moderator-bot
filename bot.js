@@ -1860,19 +1860,15 @@ client.on('ready', async () => {
   const superagent = require("superagent")
 
     let {body} = await superagent
-  .get('https://source.unsplash.com/random')
+  .get('https://some-random-api.ml/img/dog')
     
-    const embed = new Discord.MessageEmbed()
-.setAuthor(`yeni random fotoğraf:`)
-.setImage('https://source.unsplash.com/random') 
-.setTimestamp()
-.setFooter(`must`)
+ 
     
     
-    client.channels.cache.get('860903198126768138').send(embed)
+ //   client.channels.cache.get('860903198126768138').send(body.link)
 
  
-  }, 60000000);
+  }, 60000);
   
 
 });
