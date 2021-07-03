@@ -1853,3 +1853,27 @@ client.on('ready', () => {
     });
 });
 
+
+
+client.on('ready', () => {
+    console.log(client.user.tag); 
+    fs.readdir('./slash/', (error, files) => {
+        if (error) return console.log(error); 
+        files.forEach(file => { 
+            if (!file.endsWith('.js')) return; 
+            let fileProp = require('./slash/' + file);
+            client.api.applications(client.user.id).commands.post({
+                data: {
+                    name: fileProp.help.name, 
+                    description: fileProp.help.description, 
+                    options: fileProp.help.options
+                }
+            });
+            client.ws.on('INTERACTION_CREATE', async interaction => { 
+                const command = interaction.data.name.toLowerCase(); 
+                const args = interaction.data.options; 
+                if (command == fileProp.help.name.toLowerCase()) fileProp.run(client, interaction, args); 
+            });
+        });
+    });
+});
