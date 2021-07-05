@@ -734,10 +734,10 @@ client.on('message', async (message, msg) => {
   const canvas = Canvas.createCanvas(360, 100);
   const ctx = canvas.getContext("2d");
   const resim1 =  await Canvas.loadImage(
-    "https://cdn.discordapp.com/attachments/621045237137276929/621046566106431488/tes3.png"
+    "https://cdn.discordapp.com/attachments/845220534957899796/861704890064306216/supheli.png"
   );
   const resim2 =  await Canvas.loadImage(
-    "https://cdn.discordapp.com/attachments/621045237137276929/621046061875724298/tes1.png"
+    "https://cdn.discordapp.com/attachments/845220534957899796/861704893961207848/guvenli.png"
   );
   const kurulus = new Date().getTime() - user.createdAt.getTime();
     const gün = moment(kurulus).format("dddd");
@@ -752,6 +752,8 @@ client.on('message', async (message, msg) => {
 
   const avatar =  await Canvas.loadImage(pp);
   ctx.drawImage(kontrol, 0, 0, canvas.width, canvas.height);
+      ctx.font = '12px "Comic Sans"'
+  ctx.fillText(member.username, 100, 95)
   ctx.beginPath();
   ctx.lineWidth = 4;
   ctx.fill();
