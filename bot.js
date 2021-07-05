@@ -748,22 +748,17 @@ client.on('message', async (message, msg) => {
   const background =  await Canvas.loadImage(
     "https://cdn.discordapp.com/attachments/621045237137276929/621045305089064980/arka.png"
   );
- let x = 0
-    let y = 0
-    ctx.drawImage(background, x, y)
+  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
   const avatar =  await Canvas.loadImage(pp);
-      ctx.drawImage(avatar, 143, 10, 73, 72);
   ctx.drawImage(kontrol, 0, 0, canvas.width, canvas.height);
-     let text = `Welcome ${member.username}!`
-    x = canvas.width / 2 - ctx.measureText(text).width / 2
-    ctx.fillText(text, x, 60 + avatar.height)
   ctx.beginPath();
   ctx.lineWidth = 4;
   ctx.fill();
   ctx.lineWidth = 4;
   ctx.arc(180, 46, 36, 0, 2 * Math.PI);
   ctx.clip();
-  
+  ctx.drawImage(avatar, 143, 10, 73, 72);
 
   message.channel.send({files:[{attachment:canvas.toBuffer(),name:"must.png"}]})
       
