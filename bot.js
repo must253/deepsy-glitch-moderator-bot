@@ -748,12 +748,14 @@ client.on('message', async (message, msg) => {
   const background =  await Canvas.loadImage(
     "https://cdn.discordapp.com/attachments/621045237137276929/621045305089064980/arka.png"
   );
-  ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  let x = 0
+    let y = 0
+    ctx.drawImage(background, x, y)
 
   const avatar =  await Canvas.loadImage(pp);
   ctx.drawImage(kontrol, 0, 0, canvas.width, canvas.height);
       ctx.font = '12px "Comic Sans"'
-  ctx.fillText(member.username, 130, 95)
+  ctx.fillText(member.username, 135, 95)
   ctx.beginPath();
   ctx.lineWidth = 4;
   ctx.fill();
