@@ -753,7 +753,7 @@ client.on('message', async (message, msg) => {
   const avatar =  await Canvas.loadImage(pp);
   ctx.drawImage(kontrol, 0, 0, canvas.width, canvas.height);
       ctx.font = '12px "Comic Sans"'
-  ctx.fillText(member.username, 100, 95)
+  ctx.fillText(member.username, 130, 95)
   ctx.beginPath();
   ctx.lineWidth = 4;
   ctx.fill();
