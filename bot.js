@@ -1822,8 +1822,7 @@ client.on('ready', () => {
             ["buttonmc","844175728894935041"],
             ["buttonsewvar","844167402014507008"],
             ["buttonsewyok","844171087163424788"],
-            ["buttonsewyapmıyorum","844171187957530624"],
-            ["buttonnsfw","860921857011089458"]
+            ["buttonsewyapmıyorum","844171187957530624"]
         ])
 
         let member = await client.guilds.cache.get("842418432905183242").members.fetch(interaction.member.user.id)
@@ -1834,6 +1833,48 @@ client.on('ready', () => {
       const rolisim = client.guilds.cache.get(options.sunucu_id).roles.cache.get(role);
       
 
+        if(member.roles.cache.has(role)){
+            await member.roles.remove(role)
+            returnText = `"${rolisim.name}" İsimli rol verildi`
+        }else{
+            await member.roles.add(role)
+            returnText = `"${rolisim.name}" İsimli rol verildi`
+
+        }
+        
+        client.api.interactions(interaction.id, interaction.token).callback.post({
+            data: {
+                type: 4,
+                data: {
+                    content: returnText,
+                    flags: "64" // Gizli reply atmak için girmeniz gereken flag
+                }
+            }
+        })
+      
+        
+    });
+  
+  
+  
+   client.ws.on('INTERACTION_CREATE', async interaction => {
+        
+        let name = interaction.data.custom_id
+
+        let GameMap = new Map([
+                       ["buttonnsfw","860921857011089458"]
+        ])
+
+        let member = await client.guilds.cache.get("842418432905183242").members.fetch(interaction.member.user.id)
+        if(!GameMap.has(name) || !member) return;
+
+        let role = GameMap.get(name)
+        let returnText;
+      const rolisim = client.guilds.cache.get(options.sunucu_id).roles.cache.get(role);
+      
+     const sılaid = '741416943696871434'
+     
+if(interaction.member.user.id === !sılaid){
         if(member.roles.cache.has(role)){
             await member.roles.remove(role)
             returnText = `"${rolisim.name}" İsimli rol verildi`
