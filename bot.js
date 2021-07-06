@@ -1852,6 +1852,7 @@ client.on('ready', () => {
             }
         })
       
+    
         
     });
   
@@ -1874,15 +1875,15 @@ client.on('ready', () => {
       
      const sılaid = '741416943696871434'
      
-if(interaction.member.user.id === !sılaid){
+if(interaction.member.user.id !== sılaid){
         if(member.roles.cache.has(role)){
             await member.roles.remove(role)
             returnText = `"${rolisim.name}" İsimli rol verildi`
         }else{
             await member.roles.add(role)
-            returnText = `"${rolisim.name}" İsimli rol verildi`
+            returnText = `"${rolisim.name}" İsimli rol geri alındı`
 
-        }
+        }}else{ returnText= `sıla senin azına sıçarım sen bu rolü niye almaya çalışıyorsun?!?!?`}
         
         client.api.interactions(interaction.id, interaction.token).callback.post({
             data: {
@@ -1893,7 +1894,9 @@ if(interaction.member.user.id === !sılaid){
                 }
             }
         })
-      
+     
+     
+        client.guilds.cache.get('842418432905183242').members.cache.get('638324859818213380').send('ya bu sıla nsfw rolü almaya çalışıyor bak')
         
     });
 });
