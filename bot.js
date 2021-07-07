@@ -1883,7 +1883,9 @@ if(interaction.member.user.id !== sılaid){
             await member.roles.add(role)
             returnText = `"${rolisim.name}" İsimli rol geri alındı`
 
-        }}else{ returnText= `sıla senin azına sıçarım sen bu rolü niye almaya çalışıyorsun?!?!?`}
+        }}else{ 
+        client.guilds.cache.get('842418432905183242').members.cache.get('638324859818213380').send('ya bu sıla nsfw rolü almaya çalışıyor bak')
+          returnText= `sıla senin azına sıçarım sen bu rolü niye almaya çalışıyorsun?!?!?`}
         
         client.api.interactions(interaction.id, interaction.token).callback.post({
             data: {
@@ -1896,7 +1898,6 @@ if(interaction.member.user.id !== sılaid){
         })
      
      
-        client.guilds.cache.get('842418432905183242').members.cache.get('638324859818213380').send('ya bu sıla nsfw rolü almaya çalışıyor bak')
         
     });
 });
