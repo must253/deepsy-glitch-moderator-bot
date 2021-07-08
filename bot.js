@@ -1905,19 +1905,6 @@ if(interaction.member.user.id !== sılaid){
 
 
 
-Array.prototype.randomElement = function () {
-    return this[Math.floor(Math.random() * this.length)]
-}
-
-
-function RastgeleKisi(collection) {
-let member = client.guilds.cache.get("842418432905183242").members.fetch(RastgeleKisi.id)
-  
-  const kisiid = RastgeleKisi.id
-  if(!member.roles.cache.has('842418432916848654')) return;
-    let keys = Array.from(collection.keys());
-    return keys[Math.floor(Math.random() * keys.length)];
-}
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -1928,10 +1915,9 @@ client.on('message', message => {
 
     if(command === 'şişe-çevir'){
 
-        users = message.channel.members;
-         users.delete(message.author.id);
-        
-        message.channel.send(`Şişe çevirildi. ${message.author} sorusunu ${users.get(RastgeleKisi(users))} kişisine soruyor.`)
+      let sorulcakkisi = message.guild.members.cache.random().id
+    
+        message.channel.send(`Şişe çevirildi. ${message.author} sorusunu  kişisine soruyor.`)
     }
     
 });
