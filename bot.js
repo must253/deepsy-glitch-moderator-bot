@@ -788,6 +788,7 @@ must.locale("tr")
   db.set(`snipe.${message.guild.id}.${message.channel.id}`, message.content)
   db.set(`snipek.${message.guild.id}.${message.channel.id}`,message.author.id)
     db.set(`snipesaat.${message.guild.id}.${message.channel.id}`, must().add(3, "hours").format("DD MMMM YYYY h:mm:ss"))
+  db.set(`snipeyazılmasaat.${message.guild.id}.${message.channel.id}`, must(message.createdTimestamp).add(3, "hours").format("DD MMMM YYYY h:mm:ss"))
 
 
   let log = message.guild.channels.cache.get('845039871009751050');

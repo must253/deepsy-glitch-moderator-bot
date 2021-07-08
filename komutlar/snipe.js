@@ -8,6 +8,7 @@ exports.run = async(client, message, args) => {
 const snipemesaj = db.get(`snipe.${message.guild.id}.${message.channel.id}`)
 const snipekişi = db.get(`snipek.${message.guild.id}.${message.channel.id}`)
 const snipesaat = db.get(`snipesaat.${message.guild.id}.${message.channel.id}`)
+const snipeyazılmasaat =  db.get(`snipeyazılmasaat.${message.guild.id}.${message.channel.id}`)
 
      
     if(!snipemesaj) {
@@ -36,6 +37,7 @@ const snipesaat = db.get(`snipesaat.${message.guild.id}.${message.channel.id}`)
                       .setFooter(`${message.author.tag} Tarafından istendi!`, message.author.avatarURL({dynamic:true}))
 
                       .setDescription(`\`• Mesajı Yazan:\` <@${snipekişi}> (${snipekişi})
+                      \`• Mesajın Yazılma Tarihi:\` ${snipeyazılmasaat}
                       \`• Mesajın Silinme Tarihi:\` ${snipesaat}
                       \`• Mesaj İçeriği :\` ${snipemesaj}`))
   
