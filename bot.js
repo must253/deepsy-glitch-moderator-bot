@@ -1905,24 +1905,32 @@ if(interaction.member.user.id !== sılaid){
 
 
 
-client.on('messageCreate', async message => {
+//slash
 
-	if (message.content.toLowerCase() === '!deploy') {
-		const data = {
-			name: 'ping',
-			description: 'Replies with Pong!',
-		};
 
-		const command = await client.guilds.cache.get('842418432905183242').commands.create(data);
-		console.log(command + ` İsimli slash komutu hazır`);
-	}
+
+
+client.on('ready', () => {
+    console.log(client.user.tag); 
+    fs.readdir('./komutlarr/', (error, files) => {
+        if (error) return console.log(error); 
+        files.forEach(file => { 
+            if (!file.endsWith('.js')) return; 
+            let fileProp = require('./komutlarr/' + file);
+            client.api.applications(client.user.id).commands.post({
+                data: {
+                    name: fileProp.help.name, 
+                    description: fileProp.help.description, 
+                    options: fileProp.help.options
+                }
+            });
+            client.ws.on('INTERACTION_CREATE', async interaction => { 
+                const command = interaction.data.name.toLowerCase(); 
+                const args = interaction.data.options; 
+                if (command == fileProp.help.name.toLowerCase()) fileProp.run(client, interaction, args); 
+            });
+        });
+    });
 });
 
-
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
-
-	if (interaction.commandName === 'ping') {
-		await interaction.reply('Pong!');
-	}
-});
+//slash

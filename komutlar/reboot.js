@@ -7,7 +7,7 @@ if(message.author.id !== "638324859818213380") return message.channel.send(":no_
 .setTitle('30 saniye içinde evet yazmassanız iptal edilecek!')
 .setDescription('**Botun yeniden başlatılmasına onay veriyorsanız 30 saniye içinde evet yazın.**')
 .setColor('RANDOM')
-message.inlineReply(embed)
+message.Must(embed)
 .then(() => {
   message.channel.awaitMessages(response => response.content === "evet", {
     max: 1,
