@@ -1905,3 +1905,24 @@ if(interaction.member.user.id !== sılaid){
 
 
 
+client.on('messageCreate', async message => {
+
+	if (message.content.toLowerCase() === '!deploy') {
+		const data = {
+			name: 'ping',
+			description: 'Replies with Pong!',
+		};
+
+		const command = await client.guilds.cache.get('842418432905183242').commands.create(data);
+		console.log(command + ` İsimli slash komutu hazır`);
+	}
+});
+
+
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	if (interaction.commandName === 'ping') {
+		await interaction.reply('Pong!');
+	}
+});

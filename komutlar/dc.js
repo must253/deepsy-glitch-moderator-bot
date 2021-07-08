@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
-exports.run = async (client, message, args) => {
-const dogruluk = ['Bir zaman makinen olsa hangi zaman dönemine giderdin?',
+exports.run = async (bot, message, args) => {
+    const dogruluk = ['Bir zaman makinen olsa hangi zaman dönemine giderdin?',
 'Hiç hipnotize edildin mi?',
 'Zeka ve güzellik arasında bir seçim yapmak zorunda kalsan neyi seçerdin?',
 'Daha önce sana verilmiş en kötü hediye nedir?',
@@ -60,37 +60,24 @@ const cesaret = ['Bir tur boyunca maymun gibi davran.',
 '(Zorunda değilsiniz)Bir kızı yanağından öp.',
 '(Zorunda değilsiniz)Balkondan yoldan geçen birine bağır.' ,
 'Odanın fotoğrafını at.']
-if (!message.member.voice.channel) return message.channel.send(new Discord.MessageEmbed().setDescription(`Ses kanalında değilsin!`))
-if(message.member.voice.channel.members.size < 3) return message.channel.send(new Discord.MessageEmbed().setDescription(`Ses kanalında en az 3 kişi olmalı!`))
-var dogrulukcevap = dogruluk[Math.floor(Math.random() * dogruluk.length)];
-var cesaretcevap = cesaret[Math.floor(Math.random() * cesaret.length)];
-let dogrulukembed = new Discord.MessageEmbed()
-.setDescription(`${message.author} kurbanın ${message.member.voice.channel.members.filter(a => a.id !== message.author.id).random()}
-⤷ ${dogrulukcevap}`)
-let cesaretembed = new Discord.MessageEmbed()
-.setDescription(`${message.author} kurbanın ${message.member.voice.channel.members.filter(a => a.id !== message.author.id).random()}
-⤷ ${cesaretcevap}`)
-let secilenid = message.member.voice.channel.members.filter(a => a.id !== message.author.id).random()
-let secim = new Discord.MessageEmbed()
-.setDescription(`${message.author} kurbanın ${message.member.voice.channel.members.filter(a => a.id !== message.author.id).random()} Doğruluk mu ? Cesaretlik mi?`)
-.setFooter(`!`)
-.setColor("RANDOM")  
-message.channel.send(secim).then(async phentosarox => {
-phentosarox.react("❕").then(gereksiz => phentosarox.react("❔"))
-const filtre = (reaction, user) => {
-    return ["❕", "❔"].includes(reaction.emoji.name) && user.id === secilenid.id;
+    var dogrulukcevap = dogruluk[Math.floor(Math.random() * dogruluk.length)];
+    var cesaretcevap = cesaret[Math.floor(Math.random() * cesaret.length)]
+
+    message.channel.send('\`Doğruluk\` mu yoksa \`cesaret\` mi?')
+        const response = await message.channel.awaitMessages(neblm => neblm.author.id === message.author.id, { max: 1, time: 30000 });
+        const choice = response.first().content
+        if (choice == 'doğruluk' || choice == 'd') return message.channel.send(`${dogrulukcevap}`)
+        if (choice !== 'cesaret' && choice !== 'c') {
+            message.channel.send(`Lütfen sadece **doğruluk (d)** veya **cesaret (c)** ile cevap verin.`) 
+        }
+        if (choice == 'cesaret' || choice == 'c') uwu = true
+    
+    if (uwu) {
+        message.channel.send(`${cesaretcevap}`)
+
+    }
 }
-phentosarox.awaitReactions(filtre, { max: 1, time: 30000}).then(collected => {
-    const tepki = collected.first();  
-  if(tepki.emoji.name == "❕") {
-    phentosarox.edit(cesaretembed)
-}
-    if(tepki.emoji.name == "❔") {
-    phentosarox.edit(dogrulukembed)
-}
-})
-})
-    };
+
 exports.conf = {
     enabled: true,
     guildOnly: true,
