@@ -1905,19 +1905,3 @@ if(interaction.member.user.id !== sılaid){
 
 
 
-
-client.on('message', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    
-    const args = message.content.slice(prefix.length).split(' ');
-    const command = args.shift().toLowerCase();
-	
-
-    if(command === 'şişe-çevir'){
-
-      let sorulcakkisi = message.guild.members.cache.random().id
-    
-        message.channel.send(`Şişe çevirildi. ${message.author} sorusunu  kişisine soruyor.`)
-    }
-    
-});
