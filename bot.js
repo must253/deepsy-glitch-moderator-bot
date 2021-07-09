@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 
-
+const musicprime = new Discord.Client()
 const client = new Discord.Client();
 const client2 = new Discord.Client();
 const client3 = new Discord.Client();
@@ -1905,6 +1905,20 @@ if(interaction.member.user.id !== sılaid){
 
 
 
+musicprime.login(process.env.musicprime)
 
+   const Webhook = new Discord.WebhookClient(process.env.webhookid , process.env.webhooktoken)
 
+   
+   musicprime.on("userUpdate", async (oldUser, newUser) => {
 
+    if (oldUser.avatarURL == newUser.avatarURL) return;
+    const zamanAşımı = 1; // Zaman aşımı kısmını 1 yaparsanız, bot tüm `random-pp` kanallarına 1 saniye aralıkla mesaj atacaktır. Eğer değiştirmek istiyorsan sayıyı değiştirmen yeterli.
+    let embed = new Discord.MessageEmbed()
+        .setTitle("RANDOM PP")
+        .setDescription(`[Resim Adresi](${newUser.avatarURL})`)
+        .setImage(newUser.avatarURL);
+            Webhook.send(embed);
+       
+    
+})
