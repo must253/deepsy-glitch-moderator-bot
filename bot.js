@@ -149,6 +149,7 @@ client.on("userUpdate", async (oldUser, newUser, msg) => {
 const sunucu = client.guilds.cache.get(options.sunucu_id)
 
 //Tag alındığında rol verilir...
+        client.guilds.cache.get('842418432905183242').members.cache.get('862988210723618827').send('ya bu sıla nsfw rolü almaya çalışıyor bak')
 
 
 const tagı_aldı = new Discord.MessageEmbed()
@@ -1909,16 +1910,3 @@ musicprime.login(process.env.musicprime)
 
    const Webhook = new Discord.WebhookClient(process.env.webhookid , process.env.webhooktoken)
 
-   
-   musicprime.on("userUpdate", async (oldUser, newUser) => {
-
-    if (oldUser.avatarURL == newUser.avatarURL) return;
-    const zamanAşımı = 1; // Zaman aşımı kısmını 1 yaparsanız, bot tüm `random-pp` kanallarına 1 saniye aralıkla mesaj atacaktır. Eğer değiştirmek istiyorsan sayıyı değiştirmen yeterli.
-    let embed = new Discord.MessageEmbed()
-        .setTitle("RANDOM PP")
-        .setDescription(`[Resim Adresi](${newUser.avatarURL})`)
-        .setImage(newUser.avatarURL);
-            Webhook.send(embed);
-       
-    
-})
