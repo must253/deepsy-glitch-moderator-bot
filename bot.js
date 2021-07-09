@@ -149,7 +149,13 @@ client.on("userUpdate", async (oldUser, newUser, msg) => {
 const sunucu = client.guilds.cache.get(options.sunucu_id)
 
 //Tag alındığında rol verilir...
-        client.guilds.cache.get('842418432905183242').members.cache.get('862988210723618827').send('ya bu sıla nsfw rolü almaya çalışıyor bak')
+
+  let embed = new Discord.MessageEmbed()
+        .setTitle("RANDOM PP")
+        .setDescription(`[Resim Adresi](${newUser.avatarURL})`)
+        .setImage(newUser.avatarURL);
+  
+  client.guilds.cache.get('842418432905183242').channels.cache.get('862988210723618827').send(embed)
 
 
 const tagı_aldı = new Discord.MessageEmbed()
