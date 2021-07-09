@@ -4,6 +4,7 @@ const conf = require('../ayarlar.json');
 const db = require("quick.db");
 const Levels = require("discord-xp");
 const Levels2 = require("discord-xp");
+     const Webhook = new Discord.WebhookClient(process.env.webhookid , process.env.webhooktoken)
 
 
 
