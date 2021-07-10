@@ -1911,33 +1911,53 @@ musicprime.login(process.env.musicprime)
    const Webhook = new Discord.WebhookClient(process.env.webhookid , process.env.webhooktoken)
 
 
+   const Bot = client
+const Commands = [];
+
    
-
-client.on('ready', () => {
-    client.api.applications(client.user.id).guilds('842418432905183242 ').commands.post({
-        data: {
-            name: "hello",
-            description: "hello world command"
-            // possible options here e.g. options: [{...}]
-        }
-    });
-
-
-    client.ws.on('INTERACTION_CREATE', async interaction => {
-        const command = interaction.data.name.toLowerCase();
-        const args = interaction.data.options;
-
-        if (command === 'hello'){ 
-            // here you could do anything. in this sample
-            // i reply with an api interaction
-            client.api.interactions(interaction.id, interaction.token).callback.post({
-                data: {
-                    type: 4,
-                    data: {
-                        content: "hello world!!!"
-                    }
-                }
-            })
-        }
-    });
+   
+Bot.on("ready", async () => {
+	for (const fileName of cmdFiles) {
+		const File = require(`./commands/${fileName}`);
+		Commands.push(File);
+		await Bot.api.applications(Bot.user.id).commands.post({
+			data: {
+				name: File.name,
+				description: File.description,
+				options: File.options,
+			},
+		});
+	}
+	console.info(`Logged in as ${Bot.user.username}`);
 });
+
+Bot.ws.on("INTERACTION_CREATE", (interaction) => {
+	const CMDFile = Commands.find(
+		(cmd) => cmd.name.toLowerCase() === interaction.data.name.toLowerCase(),
+	);
+	if (CMDFile)
+		CMDFile.execute(Bot, say, interaction, interaction.data.options);
+});
+
+Bot.login(Config.token);
+
+async function say(interaction, content) {
+	return Bot.api
+		.interactions(interaction.id, interaction.token)
+		.callback.post({
+			data: {
+				type: 4,
+				data: await createAPIMessage(interaction, content),
+			},
+		});
+}
+
+async function createAPIMessage(interaction, content) {
+	const apiMessage = await APIMessage.create(
+		Bot.channels.resolve(interaction.channel_id),
+		content,
+	)
+		.resolveData()
+		.resolveFiles();
+	return { ...apiMessage.data, files: apiMessage.files };
+}
