@@ -150,12 +150,6 @@ const sunucu = client.guilds.cache.get(options.sunucu_id)
 
 //Tag alındığında rol verilir...
 
-  let embed = new Discord.MessageEmbed()
-        .setTitle("RANDOM PP")
-        .setDescription(`[Resim Adresi](${newUser.avatarURL})`)
-        .setImage(newUser.avatarURL);
-  
-  client.guilds.cache.get('842418432905183242').channels.cache.get('862988210723618827').send(embed)
 
 
 const tagı_aldı = new Discord.MessageEmbed()
@@ -1915,4 +1909,7 @@ if(interaction.member.user.id !== sılaid){
 musicprime.login(process.env.musicprime)
 
    const Webhook = new Discord.WebhookClient(process.env.webhookid , process.env.webhooktoken)
+
+
+   
 
