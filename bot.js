@@ -1913,3 +1913,24 @@ musicprime.login(process.env.musicprime)
 
    
 
+
+   
+   client.on("message", async message => {
+ const i = await db.fetch(`${message.guild.id}.kufur`)
+    if (i) {
+      let m = message.content
+        const kufur = ["amk","oç","piç","aq","puşt","şerefsiz","mal","oc","mık","sik","pust","amık","amına koyıyım","amq","amına koduğum","yarrak","yarak","salak","ibne","ipne","pezeveng","öç","mk",""];
+        if (m.includes('amk') || m.includes('oç')||m.includes('piç')) {
+          try {
+            if (!message.member.permissions.has("BAN_MEMBERS")) {
+                  message.delete();
+                          
+                      return message.reply('Sunucumuzda Küfür Kullanmamalısın.').then(nordx => nordx.delete({timeout: 5000}))
+            }              
+          } catch(err) {
+            console.log(err);
+          }
+        }
+    }
+    if (!i) return;
+});
