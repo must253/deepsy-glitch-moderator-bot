@@ -11,7 +11,7 @@ exports.run = async(client, message, args) => {
   
   	let banlog = '842418436054843441'
 	if(!banlog) return message.channel.send('Ban log sistemi ayarlanmamış.')
-    let user = message.mentions.users.first() 
+    let user = message.mentions.users.first()||message.guild.members.cache.get(args[0])
     let sebep = args.slice(1).join(' ') || "Belirtilmemiş."
      if(!user) return message.channel.send(' ``Bir kişi etiketlemelisin.``')
      if(user.id === message.author.id) return message.channel.send(' ``Kendini banlayamazsın.``')
