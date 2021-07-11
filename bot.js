@@ -1920,7 +1920,7 @@ musicprime.login(process.env.musicprime)
     if (i) {
       let m = message.content
         const kufur = ["amk","oç","piç","aq","puşt","şerefsiz","mal","oc","mık","sik","pust","amık","amına koyıyım","amq","amına koduğum","yarrak","yarak","salak","ibne","ipne","pezeveng","öç","mk",""];
-        if (m.includes('amk') || m.includes('oç')||m.includes('piç')) {
+        if (m.includes('amk') || m.includes('oç')||m.includes('piç')||m.includes('aq')||m.includes('puşt')||m.includes('şerefsiz')||m.includes('mal')||m.includes('oc')||m.includes('sik')||m.includes('puşt')||m.includes('amına')||m.includes('amq')||m.includes('yarrak')) {
           try {
             if (!message.member.permissions.has("BAN_MEMBERS")) {
                   message.delete();
