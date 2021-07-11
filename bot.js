@@ -1903,34 +1903,3 @@ if(interaction.member.user.id !== sılaid){
         
     });
 });
-
-
-
-musicprime.login(process.env.musicprime)
-
-   const Webhook = new Discord.WebhookClient(process.env.webhookid , process.env.webhooktoken)
-
-
-   
-
-
-   
-   client.on("message", async message => {
- const i = await db.fetch(`${message.guild.id}.kufur`)
-    if (i) {
-      let m = message.content
-        const kufur = ["amk","oç","piç","aq","puşt","şerefsiz","mal","oc","mık","sik","pust","amık","amına koyıyım","amq","amına koduğum","yarrak","yarak","salak","ibne","ipne","pezeveng","öç","mk",""];
-        if (m.includes('amk') || m.includes('oç')||m.includes('piç')||m.includes('aq')||m.includes('puşt')||m.includes('şerefsiz')||m.includes('mal')||m.includes('oc')||m.includes('sik')||m.includes('puşt')||m.includes('amına')||m.includes('amq')||m.includes('yarrak')||m.includes('yarak')||m.includes('ibne')||m.includes('mk')||m.includes('pezevenk')||m.includes('pezeveng')) {
-          try {
-            if (!message.member.permissions.has("BAN_MEMBERS")) {
-                  message.delete();
-                          
-                      return message.reply('Sunucumuzda Küfür Kullanmamalısın.').then(nordx => nordx.delete({timeout: 5000}))
-            }              
-          } catch(err) {
-            console.log(err);
-          }
-        }
-    }
-    if (!i) return;
-});
