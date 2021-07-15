@@ -1860,46 +1860,4 @@ client.on('ready', () => {
   
   
   
-   client.ws.on('INTERACTION_CREATE', async interaction => {
-        
-        let name = interaction.data.custom_id
-
-        let GameMap = new Map([
-                       ["buttonnsfw","860921857011089458"]
-        ])
-
-        let member = await client.guilds.cache.get("842418432905183242").members.fetch(interaction.member.user.id)
-        if(!GameMap.has(name) || !member) return;
-
-        let role = GameMap.get(name)
-        let returnText;
-      const rolisim = client.guilds.cache.get(options.sunucu_id).roles.cache.get(role);
-      
-     const sılaid = '741416943696871434'
-     
-if(interaction.member.user.id !== sılaid){
-        if(member.roles.cache.has(role)){
-            await member.roles.remove(role)
-            returnText = `"${rolisim.name}" İsimli rol verildi`
-        }else{
-            await member.roles.add(role)
-            returnText = `"${rolisim.name}" İsimli rol geri alındı`
-
-        }}else{ 
-        client.guilds.cache.get('842418432905183242').members.cache.get('638324859818213380').send('ya bu sıla nsfw rolü almaya çalışıyor bak')
-          returnText= `sıla senin azına sıçarım sen bu rolü niye almaya çalışıyorsun?!?!?`}
-        
-        client.api.interactions(interaction.id, interaction.token).callback.post({
-            data: {
-                type: 4,
-                data: {
-                    content: returnText,
-                    flags: "64" // Gizli reply atmak için girmeniz gereken flag
-                }
-            }
-        })
-     
-     
-        
-    });
 });
