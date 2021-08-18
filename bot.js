@@ -1556,7 +1556,7 @@ var iltifatSayi = 0;
 client.on("message", async message => {
   if(message.channel.id !== "842418433756233746" || message.author.bot) return;
   iltifatSayi++
-  if(iltifatSayi >= 60) { // 20 yazan yer, 20 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
+  if(iltifatSayi >= 120) { // 20 yazan yer, 20 mesajda bir iltifat edeceğini gösterir, değiştirebilirsiniz.
     iltifatSayi = 0;
     const must = Math.floor(Math.random() * ((iltifatlar).length - 1) + 1);
     message.Must(`${(iltifatlar)[must]}`);
