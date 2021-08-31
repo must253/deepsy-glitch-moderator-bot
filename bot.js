@@ -1742,7 +1742,7 @@ if(message.channel.id !== kanal) return;
 if(message.author.bot == true) return;
 let soru = message.content;
 ai.sor(soru).then(must => {
-return message.Must(must.replace("codere.fun'da","Deepsy'de").replace("<codare-cmd-ses kapatma/>", "<deepsy-cmd-ses kapatma/>").replace("CodAre","Deepsy").replace("codare","deepsy").replace("Furtsy","'Must").replace("Hüseyin'le", "'Must Beyefendi ile")) 
+return message.Must(must.replace("codere.fun'da","Deepsy'de").replace("<codare-cmd-ses kapatma/>", "<deepsy-cmd-ses kapatma/>").replace("CodAre","Deepsy").replace("codare","deepsy").replace("Furtsy","'Must").replace("Hüseyin'le", "'Must Beyefendi ile").replace("codere.fun" , "Deepsy")) 
 
 });
 })
