@@ -19,7 +19,7 @@ module.exports = client => {
   );
   client.user.setStatus("online");
   var oyun = [
-    "'Must#1388",
+    "'Must#2829",
  
 
   ];
