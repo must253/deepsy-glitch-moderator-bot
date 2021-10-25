@@ -3,10 +3,11 @@ const ms = require("ms");
 const ayarlar = require('../ayarlar.json');
 const prefix = ayarlar.prefix;
 const db = require('quick.db')
+const ayarlar = require('ayarlar.json')
 
 exports.run = async(client, message, args) => {
 
-  let yetkili = "842418432926679068"
+  let yetkili = ayarlar.mutecirol
 
 if(!message.member.roles.cache.has(yetkili)) return message.channel.send(` Bu Komudu Kullanabilmen İçin Mute Yetkilisi Olmalısın!`)
 
@@ -34,7 +35,7 @@ if (!mutelirolu) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarla
 .setColor('RANDOM')
   
   mutekisi.roles.add(mutelirolu)
-  var must = "842418436054843438"
+  var must = ayarlar.modlog
     if(!must) return;
   message.channel.send(`<@${mutekisi.id}> kullanıcısı ${args[1]} süresi boyunca mutelendi!`)
   client.channels.cache.get(must).send(muteleme);
@@ -48,7 +49,7 @@ if (!mutelirolu) return message.channel.send(` Mute Rolü Ayarlanmamış! Ayarla
 .setColor('RANDOM')
      
     mutekisi.roles.remove(mutelirolu);
-    var must = "842418436054843438"
+    var must = ayarlar.modlog
     if(!must) return;
    client.channels.cache.get(must).send(mute_alma);
   }, ms(mutezaman));
