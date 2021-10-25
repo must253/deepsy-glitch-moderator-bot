@@ -17,8 +17,9 @@
   "bannerrolid":"Banlıyabilicek Rol İd",
   "rolacipkapatabilecekrolid":"Rol Açıp Kapatabilecek Rol id",
   "botungirecegiseskanali":"Botun Gireceği Ses Kanalı",
-  "sunucudancikincaatilacakmesajkanalid":"Birisi Sunucudan Çıkınca Mesaj Atılacak Kanal İd"
-  "boost_rol":"Boost Rol İd"
+  "sunucudancikincaatilacakmesajkanalid":"Birisi Sunucudan Çıkınca Mesaj Atılacak Kanal İd",
+  "boost_rol":"Boost Rol İd",
+  "jailhammer":"Jail Atabilecek Kişi İd"
 }
 
 
