@@ -12,7 +12,7 @@ exports.run = (client, message) => {
     .setColor(0x36393F)
 .setDescription(`${ client.user.username}`)
   .addField(`Bot Sahibi`, `<@638324859818213380>`, true)
-.addField(`Bot Geliştiricisi(Fİkir Veren)`, `<@700584194098856017>`, true)
+    .addField(`Bot Geliştiricisi`, `<@638324859818213380>`, true)
     .addField("Bellek Kullanımı", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true)
   .addField("Sunucu Sayısı", `${client.guilds.cache.size.toLocaleString()}`, true)
   .addField("Toplam Kullanıcı Sayısı", `${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`, true)
