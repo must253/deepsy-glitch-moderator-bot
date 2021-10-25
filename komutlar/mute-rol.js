@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
 if (args[0] === 'sıfırla') {
 let rol = db.fetch(`muterol_${message.guild.id}`)  
   if (!rol) return message.channel.send(` Mute Rolü Ayarlanmamış!`)
-  message.channel.send(`<a:hg:748304066794356767> Mute Rolü Sıfırlandı!`)
+  message.channel.send(` Mute Rolü Sıfırlandı!`)
 db.delete(`muterol_${message.guild.id}`)
   return;
 }
