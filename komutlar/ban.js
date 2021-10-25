@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
 
-
+const ayarlar = require('ayarlar.json')
 
 exports.run = async(client, message, args) => {
   
-  let rol = '842418432926679070';
+  let rol = ayarlar.bannerrolid;
   const embed = new Discord.MessageEmbed().setDescription('Ban yetkili Rolüne sahip değilsin.')
 	if(!message.member.roles.cache.has(rol)&& !message.member.hasPermission("BAN_MEMBERS"))  return message.channel.send(embed)
   
-  	let banlog = '842418436054843441'
+  	let banlog = ayarlar.modlog
 	if(!banlog) return message.channel.send('Ban log sistemi ayarlanmamış.')
     let user = message.mentions.users.first()||message.guild.members.cache.get(args[0])
     let sebep = args.slice(1).join(' ') || "Belirtilmemiş."
