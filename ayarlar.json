@@ -21,7 +21,8 @@
   "boost_rol":"Boost Rol İd",
   "jailhammer":"Jail Atabilecek Kişinin Rol İd",
   "jaileatilincaverilecekrol":"Jaile Atılınca Verilecek Rol İd",
-  "mutecirol":"Muteleyecek Kişinin Rol İd"
+  "mutecirol":"Muteleyecek Kişinin Rol İd",
+  "seviyebilgikanalid":"Birisinin Seviyesi Arttığında Mesaj Atılacak Kanal İd"
 }
 
 
