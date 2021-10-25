@@ -1,12 +1,14 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 exports.run = (client, message, args) => {
+const ayarlar = require('ayarlar.json')
 
-  let yetkili = '842418432926679069'
+  
+  let yetkili = ayarlar.jailhammer 
 
   if(!message.member.roles.cache.has(yetkili)) return message.channel.send(`Bu Komudu Kullanabilmen İçin Gerekli Yetkin Yok!!`)
-let kanal = '850290203327332372'
-let rol = '842418432980549637'
+let kanal = ayarlar.modlog
+let rol = ayarlar.jaileatilincaverilecekrol
 let kullanıcı = message.mentions.users.first() || message.guild.members.cache.get(args[0])
 let sebep = args.slice(1).join(' ') || "Belirtilmemiş.."
 if(!kanal) return message.reply('Bu sunucu için jail sistemi açık deil !')
