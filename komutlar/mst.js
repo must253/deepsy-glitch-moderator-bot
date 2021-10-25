@@ -3,7 +3,7 @@ exports.run = async (client, message) => {
   
   message.channel.messages.fetch().then(messages=> {
     
-    if(!message.member.hasPermission("BAN_MEMBERS"))  return message.react('843074510013464576')
+    if(!message.member.hasPermission("BAN_MEMBERS"))  return message.react('x')
 
 const botlar = messages.filter(msg=> msg.author.bot) 
 message.channel.bulkDelete(botlar)
