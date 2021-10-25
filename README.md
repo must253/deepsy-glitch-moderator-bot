@@ -15,3 +15,4 @@ keyifli kodlamalar 👋
 
 ᛉ D E E P S Y (+)#1525 Bot'u
 
+Sorun çıkarsa bana dm'den veya sunucudan yazabilirsiniz.
