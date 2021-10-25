@@ -19,7 +19,8 @@
   "botungirecegiseskanali":"Botun Gireceği Ses Kanalı",
   "sunucudancikincaatilacakmesajkanalid":"Birisi Sunucudan Çıkınca Mesaj Atılacak Kanal İd",
   "boost_rol":"Boost Rol İd",
-  "jailhammer":"Jail Atabilecek Kişi İd"
+  "jailhammer":"Jail Atabilecek Kişi İd",
+  "jaileatilincaverilecekrol":"Jaile Atılınca Verilecek Rol"
 }
 
 
