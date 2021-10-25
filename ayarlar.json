@@ -4,12 +4,22 @@
   "prefix": ".",
   "sahip": "638324859818213380",
   "sunucu_tag": "ᛉ",
-    "tag_rolü_id":"842418432926679063",
-    "sunucu_id": "842418432905183242",
-  "tag_kanal":  "842418433492779040",
-  "PrivHub": "846805003879841853",
-   "Symbol": "🌟",
-  "boost_rol":"852626279836680254"
+    "tag_rolü_id":"Taglı Olan Kişiye Verilecek Rol İd",
+    "sunucu_id": "Sunucu İd",
+  "tag_kanal":  "Tag Alınca Mesaj Atılacak Kanal İd",
+"sestencikincamesajkanali":"Sesten Çıkınca Atılacak Mesaj Kanalı İd",
+  "sesegirincemesajkanali":"Sese Girince Atılacak Mesaj Kanalı İd",
+  "yapayzekakanal":"Yapay Zekanın Olacağı Ses Kanalı İd" , 
+  "iltifatkanali":"İltifatların Paylaşılıcağı Kanal İd",
+  "chat":"Chat in İd si",
+  "modlog":"Bütün Logların Atılacağı Kanal İd",
+  "resimliguvenlikanal":"Resimli Güvenlik Kanalı İd",
+  "bannerrolid":"Banlıyabilicek Rol İd",
+  "rolacipkapatabilecekrolid":"Rol Açıp Kapatabilecek Rol id",
+  "botungirecegiseskanali":"Botun Gireceği Ses Kanalı",
+  "sunucudancikincaatilacakmesajkanalid":"Birisi Sunucudan Çıkınca Mesaj Atılacak Kanal İd"
+  "Symbol": "🌟",
+  "boost_rol":"Boost Rol İd"
 }
 
 
