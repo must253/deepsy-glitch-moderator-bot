@@ -28,13 +28,7 @@ module.exports = async message => {
   }
   if (cmd) {
     if (perms < cmd.conf.permLevel) return;
-	//
-	 let karaliste = db.fetch(`ckaraliste.${message.author.id}`)
- const westraben = new Discord.MessageEmbed()
- .setColor(`RED`)
- .setDescription(`<a:redke:763316512937082890> **${karaliste}** sebebiyle karalisteye alınmışsın!\nBeyaz listeye alınmak istiyorsan [BURAYA](https://discord.gg/EJ4txQM) gelebilirsin!`)
-  if(karaliste) return message.channel.send(westraben)
-	//
+
     cmd.run(client, message, params, perms);
   }
 };
